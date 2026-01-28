@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="FDAS Phoenix FrozenGold — 30 Redeemable Breeding Package NFTs on Hedera. Launch Feb 17, 2026 (Fire Horse)." />
+  <title>FDAS Phoenix FrozenGold — Fire Horse Launch</title>
+
+  <style>
+    :root{
+      --bg:#07070a;
+      --panel:#0e0f14;
+      --panel2:#12131a;
+      --text:#f2f3f7;
+      --muted:#b9bcc8;
+      --line:rgba(255,255,255,.10);
+      --accent:#f5c45a; /* warm gold */
+      --accent2:#a8e6ff; /* icy highlight */
+      --danger:#ff5c6c;
+      --ok:#7cffb2;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 15% 10%, rgba(245,196,90,.14), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(168,230,255,.10), transparent 60%),
+        radial-gradient(700px 500px at 60% 95%, rgba(245,196,90,.10), transparent 60%),
+        linear-gradient(180deg, #06060a, #050509 40%, #07070a);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 72px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .mark{
+      width:42px; height:42px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(245,196,90,.9), rgba(168,230,255,.55));
+      box-shadow: 0 10px 26px rgba(245,196,90,.12);
+      position:relative;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.35);
+      background: radial-gradient(circle at 30% 30%, rgba(0,0,0,.06), rgba(0,0,0,.35));
+    }
+    .brand strong{display:block; letter-spacing:.4px; font-size:14px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+    .nav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .nav a{
+      font-size:12px; color:var(--muted); text-decoration:none;
+      padding:8px 10px; border:1px solid transparent; border-radius:999px;
+      transition:.2s ease;
+    }
+    .nav a:hover{border-color:var(--line); color:var(--text); background:rgba(255,255,255,.03)}
+    .btn{
+      appearance:none; border:1px solid var(--line); background:rgba(255,255,255,.03);
+      color:var(--text); padding:12px 14px; border-radius:14px; cursor:pointer;
+      transition:.2s ease; font-weight:600; letter-spacing:.2px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      text-decoration:none;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(245,196,90,.35); background:rgba(245,196,90,.07)}
+    .btn.primary{
+      border-color: rgba(245,196,90,.55);
+      background: linear-gradient(135deg, rgba(245,196,90,.22), rgba(168,230,255,.10));
+      box-shadow: 0 14px 40px rgba(245,196,90,.10);
+    }
+    .btn.primary:hover{background: linear-gradient(135deg, rgba(245,196,90,.28), rgba(168,230,255,.12))}
+    .btn.small{padding:9px 11px; border-radius:12px; font-size:12px; font-weight:700}
+
+    .hero{
+      display:grid; grid-template-columns: 1.22fr .78fr; gap:18px;
+      margin-top:10px;
+    }
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; }
+    }
+
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroMedia{
+      position:relative;
+      min-height: 420px;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(700px 380px at 20% 25%, rgba(245,196,90,.18), transparent 60%),
+        radial-gradient(700px 380px at 80% 40%, rgba(168,230,255,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .heroMedia img, .heroMedia video{
+      width:100%; height:100%; object-fit:cover; display:block; opacity:.92;
+      filter: contrast(1.02) saturate(1.05);
+    }
+    .heroOverlay{
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(7,7,10,.85), rgba(7,7,10,.35) 50%, rgba(7,7,10,.70));
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:22px;
+      gap:10px;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .chip{
+      font-size:12px; color:var(--muted);
+      padding:7px 10px; border-radius:999px;
+      background: rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(8px);
+    }
+    .chip b{color:var(--text)}
+    h1{
+      margin:0;
+      font-size:40px;
+      line-height:1.06;
+      letter-spacing:-.5px;
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+    }
+    .sub{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+      max-width: 62ch;
+      margin: 6px 0 0;
+    }
+    .heroActions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .rightCard{padding:18px}
+    .kpiRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .kpi{
+      flex:1; min-width: 140px;
+      padding:12px; border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .kpi .label{font-size:11px; color:var(--muted); letter-spacing:.35px; text-transform:uppercase}
+    .kpi .value{font-size:18px; font-weight:800; margin-top:5px}
+    .mono{font-family: var(--mono)}
+    .divider{height:1px; background:var(--line); margin:14px 0}
+    .note{font-size:12px; color:var(--muted); line-height:1.5}
+
+    .countdown{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin-top:14px;
+    }
+    .timeBox{
+      padding:12px 10px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.16));
+      text-align:center;
+    }
+    .timeBox .num{font-size:22px; font-weight:900}
+    .timeBox .unit{font-size:11px; color:var(--muted); letter-spacing:.35px; text-transform:uppercase}
+
+    .section{
+      margin-top:26px;
+      padding: 18px;
+    }
+    .section h2{
+      margin: 0 0 8px;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    .section p{margin: 10px 0; color:var(--muted); line-height:1.7}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px}
+    @media (max-width: 920px){ .grid3{grid-template-columns:1fr} }
+    .card{
+      padding:14px; border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+    }
+    .card h3{margin:0 0 6px; font-size:15px}
+    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.65}
+    .card li{margin:6px 0}
+
+    .steps{display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; margin-top:12px}
+    @media (max-width: 1020px){ .steps{grid-template-columns:1fr} }
+    .step{
+      padding:12px; border-radius:18px; border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .step .n{
+      width:34px; height:34px; border-radius:14px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:900;
+      background: rgba(245,196,90,.14);
+      border:1px solid rgba(245,196,90,.35);
+      color: var(--text);
+      flex:none;
+    }
+    .step .t{font-weight:800; margin:0}
+    .step .d{margin:4px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
+
+    .mint{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:12px; margin-top:12px;
+    }
+    @media (max-width: 920px){ .mint{grid-template-columns:1fr} }
+    .mediaStrip{
+      padding:12px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      min-height: 240px;
+    }
+    @media (max-width: 520px){ .mediaStrip{grid-template-columns:1fr} }
+    .ph{
+      border-radius:16px;
+      border:1px dashed rgba(255,255,255,.18);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.12));
+      display:flex; align-items:center; justify-content:center;
+      color: rgba(255,255,255,.45);
+      font-size:12px;
+      padding:10px;
+      text-align:center;
+    }
+
+    .buyBox{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(245,196,90,.30);
+      background: linear-gradient(180deg, rgba(245,196,90,.10), rgba(0,0,0,.18));
+      position:sticky; top:14px;
+    }
+    @media (max-width: 920px){ .buyBox{position:relative; top:auto} }
+    .price{font-size:26px; font-weight:950; letter-spacing:-.4px; margin:6px 0}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color:var(--muted);
+      padding:7px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      margin-top:6px;
+    }
+    .dot{width:8px; height:8px; border-radius:999px; background: var(--ok)}
+    .dot.warn{background: var(--accent)}
+    .dot.bad{background: var(--danger)}
+
+    .formRow{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap}
+    .input{
+      flex:1; min-width: 220px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.25);
+      color:var(--text);
+      padding:12px 12px;
+      border-radius:14px;
+      outline:none;
+      font-size:14px;
+    }
+    .input:focus{border-color: rgba(168,230,255,.35); box-shadow: 0 0 0 4px rgba(168,230,255,.08)}
+    .tiny{font-size:11px; color:var(--muted); line-height:1.5; margin-top:10px}
+
+    .faq{
+      margin-top:12px;
+      display:grid; gap:10px;
+    }
+    details{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: rgba(0,0,0,.16);
+      padding:10px 12px;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:800;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    .ans{color:var(--muted); line-height:1.7; margin-top:10px; font-size:14px}
+
+    .footer{
+      margin-top:28px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;
+    }
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .links a{color:var(--muted); text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.18)}
+    .links a:hover{color:var(--text)}
+    .toast{
+      position:fixed; left:50%; transform:translateX(-50%);
+      bottom:18px; width:min(680px, calc(100% - 28px));
+      border:1px solid var(--line);
+      background: rgba(12,12,16,.92);
+      backdrop-filter: blur(10px);
+      border-radius:18px;
+      padding:12px 14px;
+      box-shadow: var(--shadow);
+      display:none;
+      z-index:999;
+    }
+    .toast.show{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+    .toast .msg{color:var(--muted); font-size:13px; line-height:1.5}
+    .toast .msg b{color:var(--text)}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <a class="brand" href="#top">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <strong>FDAS Phoenix FrozenGold</strong>
+          <span>Fire Horse Release • Feb 17, 2026</span>
+        </div>
+      </a>
+
+      <div class="nav" aria-label="Primary navigation">
+        <a href="#what">What You Receive</a>
+        <a href="#lineage">Soul Lineage</a>
+        <a href="#proof">Transparency</a>
+        <a href="#how">How Redemption Works</a>
+        <a href="#mint">Launch</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+
+    <div id="top" class="hero">
+      <div>
+        <div class="heroMedia">
+          <!-- Replace this placeholder image with Phoenix artwork -->
+          <!-- TIP: Put your image in the same folder and update src="phoenix-hero.jpg" -->
+          <img src="phoenix-hero.jpg" alt="FDAS Phoenix — FrozenGold" onerror="this.style.display='none';" />
+
+          <div class="heroOverlay">
+            <div>
+              <div class="chips">
+                <div class="chip"><b>30</b> Redeemable Breeding Package NFTs</div>
+                <div class="chip"><b>$2,500</b> All-Inclusive</div>
+                <div class="chip"><b>Hedera</b> Verified Utility</div>
+              </div>
+              <h1>FrozenGold for a Soul Lineage.</h1>
+              <p class="sub">
+                FDAS Phoenix Genesis is a limited release of 30 redeemable NFTs that secure one FrozenGold breeding package
+                — created to honor lineage, intention, and verifiable real-world fulfillment.
+              </p>
+
+              <div class="heroActions">
+                <a class="btn primary" href="#mint" id="ctaPrimary">Connect Wallet</a>
+                <a class="btn" href="#how">How redemption works</a>
+                <a class="btn" href="#proof">View transparency</a>
+              </div>
+            </div>
+
+            <div class="note">
+              Launch: <span class="mono" id="launchText">Feb 17, 2026 • Fire Horse • America/New_York</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel rightCard" aria-label="Launch card">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+          <div>
+            <div class="label" style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px;">Countdown to Release</div>
+            <div style="font-weight:950; font-size:18px; margin-top:6px;">Fire Horse Opening</div>
+          </div>
+          <a class="btn small" href="#mint">Go to Launch</a>
+        </div>
+
+        <div class="countdown" role="timer" aria-live="polite">
+          <div class="timeBox"><div class="num" id="cdDays">--</div><div class="unit">Days</div></div>
+          <div class="timeBox"><div class="num" id="cdHours">--</div><div class="unit">Hours</div></div>
+          <div class="timeBox"><div class="num" id="cdMins">--</div><div class="unit">Minutes</div></div>
+          <div class="timeBox"><div class="num" id="cdSecs">--</div><div class="unit">Seconds</div></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="kpiRow">
+          <div class="kpi">
+            <div class="label">Supply</div>
+            <div class="value"><span id="supplyLeft">30</span> / 30</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Price</div>
+            <div class="value">$2,500</div>
+          </div>
+        </div>
+
+        <div class="kpiRow">
+          <div class="kpi">
+            <div class="label">Chain</div>
+            <div class="value">Hedera</div>
+          </div>
+          <div class="kpi">
+            <div class="label">Type</div>
+            <div class="value">Redeemable</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="note">
+          This is <b>not racing</b> and <b>not fractional ownership</b>.
+          Each NFT represents a <b>redeemable FrozenGold breeding package</b> with a transparent redemption trail.
+        </div>
+      </div>
+    </div>
+
+    <div id="what" class="panel section">
+      <h2>What you receive</h2>
+      <p>
+        Each Genesis NFT secures one FrozenGold Breeding Package for FDAS Phoenix. The package is designed to be simple,
+        premium, and fulfillment-focused.
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>1 NFT = 1 Breeding Package</h3>
+          <ul>
+            <li>Redeemable right to one FrozenGold breeding package</li>
+            <li>Transferable until redeemed</li>
+            <li>On-chain redemption status recorded</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Included in the package</h3>
+          <ul>
+            <li>Straw allocation per your protocol (define below)</li>
+            <li>Handling + deposit + shipping coordination</li>
+            <li>Support concierge for mare owners / vets</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Foal registration</h3>
+          <ul>
+            <li>One registered foal included</li>
+            <li>Clear process + documentation checkpoints</li>
+            <li>Optional add-ons (as defined in terms)</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:14px;">
+        Customize this section with your exact straw protocol (example language):
+        “Standard allocation: 4 straws (2 pre-ovulation, 2 post-ovulation) unless your veterinarian advises otherwise.”
+      </p>
+    </div>
+
+    <div id="lineage" class="panel section">
+      <h2>Soul lineage</h2>
+      <p>
+        This release is about preserving a living legacy. Phoenix isn’t marketed through race results — he’s shared through
+        story, lineage, intention, and proof of real-world fulfillment.
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Origin</h3>
+          <p class="note" style="margin:8px 0 0;">
+            Replace with your short origin line:
+            “From Brody x Mandy — Phoenix is the final foal of our original Leopard Friesian journey.”
+          </p>
+        </div>
+        <div class="card">
+          <h3>FrozenGold</h3>
+          <p class="note" style="margin:8px 0 0;">
+            Add your key metric snapshot (tasteful):
+            “Collection batches documented. Motility recorded. Storage maintained and attested.”
+          </p>
+        </div>
+        <div class="card">
+          <h3>Echoes of the Bloodline</h3>
+          <p class="note" style="margin:8px 0 0;">
+            Your differentiator:
+            “We capture lineage as a living story — with integrity, transparency, and stewardship.”
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="note">
+        Optional: embed a short 60-second video here (YouTube/Vimeo).
+        Replace the iframe src with your link.
+      </p>
+      <div class="card" style="padding:0; overflow:hidden;">
+        <div style="position:relative; padding-top:56.25%;">
+          <iframe
+            title="FDAS Phoenix — FrozenGold Overview"
+            src=""
+            style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div id="proof" class="panel section">
+      <h2>Transparency</h2>
+      <p>
+        Our “trust layer” is documentation and cadence: inventory, redemption status, and fulfillment checkpoints.
+        (You can start simple and expand after sell-out.)
+      </p>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Inventory attestation</h3>
+          <ul>
+            <li>Total straws available (high-level)</li>
+            <li>Storage and handling process</li>
+            <li>“Last attested” date</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Redemption trail</h3>
+          <ul>
+            <li>Redeem action recorded on-chain</li>
+            <li>Status: unredeemed / redeemed</li>
+            <li>Privacy-protected details (hashed)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Fulfillment proof</h3>
+          <ul>
+            <li>Shipping confirmation (hashed reference)</li>
+            <li>Registration process checkpoint</li>
+            <li>Monthly update cadence</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:14px;">
+        Add your public links here when ready (HashScan, marketplace collection page, terms PDF, etc.).
+      </p>
+    </div>
+
+    <div id="how" class="panel section">
+      <h2>How redemption works</h2>
+      <p>
+        A simple five-step flow designed for real-world fulfillment and clarity.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <div>
+            <div class="t">Acquire NFT</div>
+            <div class="d">Buy on launch day or via the marketplace (until redeemed).</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <div>
+            <div class="t">Connect wallet</div>
+            <div class="d">Connect your Hedera wallet to begin redemption.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <div>
+            <div class="t">Submit details</div>
+            <div class="d">Mare + vet information is collected with privacy protection.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">4</div>
+          <div>
+            <div class="t">Allocation + shipping</div>
+            <div class="d">Straws are allocated and shipment is coordinated with your vet.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="n">5</div>
+          <div>
+            <div class="t">Registration</div>
+            <div class="d">Foal registration is processed per the included package terms.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="mint" class="panel section">
+      <h2>Launch</h2>
+      <p>
+        This is the purchase module area. You can use it for: (A) “Connect Wallet” + mint on your site, or
+        (B) a button that links directly to your marketplace listing when live.
+      </p>
+
+      <div class="mint">
+        <div class="mediaStrip" aria-label="Collection media placeholders">
+          <div class="ph">Replace with Phoenix image 1<br>(e.g., close-up face)</div>
+          <div class="ph">Replace with Phoenix image 2<br>(e.g., full body)</div>
+          <div class="ph">Replace with Phoenix image 3<br>(e.g., black & white)</div>
+        </div>
+
+        <div class="buyBox" aria-label="Purchase panel">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+            <div style="font-weight:950;">Phoenix FrozenGold Genesis</div>
+            <span class="pill"><span class="dot warn" id="statusDot"></span><span id="statusText">Pre-launch</span></span>
+          </div>
+
+          <div class="price">$2,500 <span style="font-size:12px; color:var(--muted); font-weight:800;">USD</span></div>
+          <div class="note">30 total • limited release • redeemable utility on Hedera</div>
+
+          <div class="divider"></div>
+
+          <div class="formRow">
+            <button class="btn primary" style="flex:1;" id="btnConnect">Connect Wallet</button>
+            <button class="btn" style="flex:1;" id="btnBuy">Buy / Mint</button>
+          </div>
+
+          <div class="formRow">
+            <input class="input" id="waitEmail" type="email" placeholder="Join the waitlist (email)" />
+            <button class="btn" id="btnWait">Notify Me</button>
+          </div>
+
+          <div class="tiny">
+            By participating you agree to the <a href="#" id="termsLink">Terms</a>. This is a redeemable package NFT.
+            It is not racing-related, and it does not represent fractional ownership.
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="note">
+            Marketplace link (add when live):<br/>
+            <span class="mono" id="marketLink">https://your-marketplace-link-here</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="faq" class="panel section">
+      <h2>FAQ</h2>
+
+      <div class="faq">
+        <details>
+          <summary>Is this racing-related?<span style="color:var(--muted)">+</span></summary>
+          <div class="ans">No. FDAS Phoenix Genesis is centered on lineage, story, and a redeemable FrozenGold breeding package.</div>
+        </details>
+
+        <details>
+          <summary>Does this NFT mean I own Phoenix (or a share of him)?<span style="color:var(--muted)">+</span></summary>
+          <div class="ans">No. Each NFT represents a redeemable breeding package. It is not fractional ownership.</div>
+        </details>
+
+        <details>
+          <summary>How many straws are included per breeding package?<span style="color:var(--muted)">+</span></summary>
+          <div class="ans">Define your standard protocol here (example: “4 straws per cycle unless your veterinarian advises otherwise”).</div>
+        </details>
+
+        <details>
+          <summary>What if my mare doesn’t take on the first cycle?<span style="color:var(--muted)">+</span></summary>
+          <div class="ans">State your policy clearly in the terms (time window, re-try conditions, vet documentation, etc.).</div>
+        </details>
+
+        <details>
+          <summary>Can I transfer or resell the NFT?<span style="color:var(--muted)">+</span></summary>
+          <div class="ans">Yes, until it is redeemed. After redemption, the NFT is marked redeemed (or burned) so it cannot be used again.</div>
+        </details>
+
+        <details>
+          <summary>How is privacy handled for mare/vet information?<span style="color:var(--muted)">+</span></summary>
+          <div class="ans">Private details should be handled off-chain and referenced on-chain by hashed pointers for proof without exposing personal information.</div>
+        </details>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="yearNow"></span> FDAS • Phoenix FrozenGold • Hedera-based utility</div>
+      <div class="links">
+        <a href="#" id="footerTerms">Terms</a>
+        <a href="#" id="footerPrivacy">Privacy</a>
+        <a href="#top">Back to top</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <div class="msg" id="toastMsg"></div>
+    <button class="btn small" id="toastClose">Close</button>
+  </div>
+
+  <script>
+    // ==========================
+    // CONFIG (edit these)
+    // ==========================
+
+    // Launch time:
+    // Set this to your intended launch moment in America/New_York.
+    // Feb 17, 2026 at 12:00 PM Eastern is used as a placeholder.
+    const LAUNCH_ISO = "2026-02-17T12:00:00-05:00";
+
+    // Links (replace with real URLs when ready)
+    const TERMS_URL = "#";
+    const PRIVACY_URL = "#";
+    const MARKETPLACE_URL = "https://your-marketplace-link-here";
+
+    // If you want to show remaining supply dynamically, update SUPPLY_LEFT manually,
+    // or later wire it to your backend / on-chain read.
+    let SUPPLY_LEFT = 30;
+
+    // ==========================
+    // Utilities
+    // ==========================
+    const $ = (id) => document.getElementById(id);
+
+    function showToast(html){
+      const t = $("toast");
+      $("toastMsg").innerHTML = html;
+      t.classList.add("show");
+    }
+    function hideToast(){ $("toast").classList.remove("show"); }
+
+    function pad2(n){ return String(n).padStart(2,"0"); }
+
+    // Countdown to launch (based on LAUNCH_ISO)
+    const launchDate = new Date(LAUNCH_ISO);
+
+    function setStatus(){
+      const now = new Date();
+      const statusText = $("statusText");
+      const dot = $("statusDot");
+
+      if (now < launchDate){
+        statusText.textContent = "Pre-launch";
+        dot.className = "dot warn";
+      } else {
+        statusText.textContent = "Live";
+        dot.className = "dot";
+      }
+    }
+
+    function updateCountdown(){
+      const now = new Date();
+      let diff = launchDate - now;
+
+      if (diff < 0) diff = 0;
+
+      const totalSeconds = Math.floor(diff / 1000);
+      const days = Math.floor(totalSeconds / (3600 * 24));
+      const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+      const mins = Math.floor((totalSeconds % 3600) / 60);
+      const secs = totalSeconds % 60;
+
+      $("cdDays").textContent = days;
+      $("cdHours").textContent = pad2(hours);
+      $("cdMins").textContent = pad2(mins);
+      $("cdSecs").textContent = pad2(secs);
+
+      // After countdown reaches zero, update status
+      if (totalSeconds === 0){
+        setStatus();
+      }
+    }
+
+    function wireLinks(){
+      $("termsLink").href = TERMS_URL;
+      $("footerTerms").href = TERMS_URL;
+      $("footerPrivacy").href = PRIVACY_URL;
+
+      $("marketLink").textContent = MARKETPLACE_URL;
+    }
+
+    function renderSupply(){
+      $("supplyLeft").textContent = SUPPLY_LEFT;
+    }
+
+    // ==========================
+    // Wallet + Mint placeholders
+    // ==========================
+    // This page is "upload-and-go" HTML.
+    // When you are ready, replace these placeholder handlers with your Hedera wallet connect + mint logic.
+
+    function onConnectWallet(){
+      showToast("<b>Wallet connect</b><br/>This button is ready for HashPack / WalletConnect integration. If you want, paste your connect script here.");
+    }
+
+    function onBuyMint(){
+      const now = new Date();
+      if (now < launchDate){
+        showToast("<b>Not live yet.</b><br/>Launch opens on <span class='mono'>Feb 17, 2026</span> (Fire Horse). Join the waitlist below.");
+        return;
+      }
+      showToast("<b>Buy / Mint</b><br/>Connect your mint flow here (or link this button to your marketplace listing).");
+    }
+
+    function onWaitlist(){
+      const email = $("waitEmail").value.trim();
+      if (!email || !email.includes("@")){
+        showToast("<b>Enter a valid email.</b><br/>We’ll notify you when the Fire Horse release opens.");
+        return;
+      }
+      // If you have an email service (Mailchimp, ConvertKit, etc.), post the email there.
+      showToast("<b>You're on the list.</b><br/>We’ll notify <span class='mono'>" + email.replaceAll("<","&lt;") + "</span>.");
+      $("waitEmail").value = "";
+    }
+
+    // ==========================
+    // Init
+    // ==========================
+    document.addEventListener("DOMContentLoaded", () => {
+      $("yearNow").textContent = new Date().getFullYear();
+      $("launchText").textContent = "Feb 17, 2026 • Fire Horse • America/New_York";
+      wireLinks();
+      renderSupply();
+      setStatus();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      $("btnConnect").addEventListener("click", onConnectWallet);
+      $("btnBuy").addEventListener("click", onBuyMint);
+      $("btnWait").addEventListener("click", onWaitlist);
+      $("toastClose").addEventListener("click", hideToast);
+
+      // Top CTA scrolls to launch module (and can also trigger connect)
+      $("ctaPrimary").addEventListener("click", (e) => {
+        // keep normal anchor behavior
+        setTimeout(() => {
+          // Optional: auto-open wallet connect toast
+          // onConnectWallet();
+        }, 250);
+      });
+    });
+  </script>
+</body>
+</html>
