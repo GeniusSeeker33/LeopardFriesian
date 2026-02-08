@@ -1,0 +1,30 @@
+for f in index.html siblings.html frozengold.html farm-blog.html equip-rental.html fdas-nft-launch.html; do
+cat <<EOF > $f
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leopard Friesian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+
+<body id="top">
+
+  <!-- Shared Header -->
+  <div id="site-header"></div>
+
+  <!-- Page Content -->
+  <main class="container">
+    <h1>${f%.html}</h1>
+    <p>Content coming next.</p>
+  </main>
+
+  <!-- Shared Footer -->
+  <div id="site-footer"></div>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
+EOF
+done
