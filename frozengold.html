@@ -1,31 +1,203 @@
-for f in index.html siblings.html frozengold.html farm-blog.html equip-rental.html fdas-nft-launch.html; do
-cat <<EOF > $f
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Leopard Friesian</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="/css/styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FDAS Phoenix Stud Services | Leopard Friesian</title>
+
+<meta name="description" content="Reserve Frozen Gold breeding to FDAS Phoenix. Frozen semen Friesian-Appaloosa stud services, mare requirements and booking information.">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding-top:48px;
+  line-height:1.6;
+  color:#333;
+}
+.container { max-width:1000px; margin:auto; padding:40px 20px; }
+
+.hero { background:#111; color:white; text-align:center; padding:80px 20px; }
+.hero h1 { font-size:42px; margin-bottom:10px; }
+.hero p { font-size:20px; max-width:700px; margin:auto; }
+
+.button {
+  display:inline-block;
+  margin:12px;
+  padding:14px 28px;
+  background:#b89b5e;
+  color:white;
+  text-decoration:none;
+  border-radius:6px;
+  font-weight:bold;
+}
+
+h2 { margin-top:50px; }
+ul { padding-left:20px; }
+
+input, textarea {
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+input:focus, textarea:focus {
+  outline:none;
+  border-color:#b89b5e;
+}
+
+.cta {
+  background:#f4f4f4;
+  text-align:center;
+  padding:60px 20px;
+}
+
+footer {
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:30px;
+}
+</style>
 </head>
 
-<body id="top">
+<body>
 
-  <!-- Shared Header -->
-  <div id="site-header"></div>
+<!-- Sticky Header CTA -->
+<div style="position:fixed;top:0;left:0;right:0;z-index:999;background:#111;padding:10px;text-align:center;">
+  <a href="#inquiry" style="color:#fff;text-decoration:none;font-weight:bold;">Request Breeding Packet</a>
+</div>
 
-  <!-- Page Content -->
-  <main class="container">
-    <h1>${f%.html}</h1>
-    <p>Content coming next.</p>
-  </main>
+<section class="hero">
+  <h1>FDAS Phoenix — Frozen Gold Stud Services</h1>
+  <p>Friesian-Appaloosa legacy breeding for mare owners who value beauty, athleticism, and soul.</p>
 
-  <!-- Shared Footer -->
-  <div id="site-footer"></div>
+  <a class="button" href="mailto:info@leopardfriesian.com?subject=Breeding%20Packet%20Request%20-%20FDAS%20Phoenix">
+    Request Breeding Packet
+  </a>
 
-  <script src="/js/main.js"></script>
+  <a class="button" href="mailto:info@leopardfriesian.com?subject=Availability%20Request%20-%20FDAS%20Phoenix">
+    Check Availability
+  </a>
+</section>
+
+<div class="container">
+
+<h2>Why Breed to Phoenix</h2>
+<ul>
+  <li>Rare Friesian-Appaloosa lineage with unmistakable presence</li>
+  <li>Balanced temperament, expressive movement, and trainability</li>
+  <li>Foals designed for legacy, performance, and market appeal</li>
+  <li>Selective program focused on quality and reputation</li>
+</ul>
+
+<h2>What You Receive</h2>
+<ul>
+  <li>Frozen semen allocation per contract</li>
+  <li>Breeding timing guidance for your veterinarian</li>
+  <li>Shipment coordination to your repro clinic</li>
+  <li>Personal support throughout the breeding process</li>
+</ul>
+
+<h2>Pricing & Terms</h2>
+<p><strong>Breeding Fee:</strong> $2,500 Frozen / Shipped</p>
+<p><strong>Shipping & Handling:</strong> Billed at carrier cost</p>
+<p><strong>Veterinary Fees:</strong> Paid directly by mare owner</p>
+<p><strong>Deposits:</strong> Required to reserve straws and shipping window</p>
+
+<h2>How the Process Works</h2>
+<ol>
+  <li>Submit an inquiry with mare details</li>
+  <li>Receive Breeding Packet and contract</li>
+  <li>Reserve straws with deposit</li>
+  <li>Coordinate timing with reproductive veterinarian</li>
+  <li>Frozen semen ships to clinic</li>
+  <li>Pregnancy confirmation and follow-up</li>
+</ol>
+
+<h2>Mare Requirements</h2>
+<ul>
+  <li>Healthy mare cleared by reproductive veterinarian</li>
+  <li>Up-to-date health and breeding records</li>
+  <li>Experienced repro clinic for frozen semen</li>
+  <li>Ethical breeding and responsible marketing</li>
+</ul>
+
+<h2>FAQ</h2>
+
+<p><strong>How many straws are included?</strong><br>
+Allocation is defined in the breeding contract and coordinated with your vet.</p>
+
+<p><strong>Is pregnancy guaranteed?</strong><br>
+No. Frozen success depends on mare fertility, timing, and veterinary handling.</p>
+
+<p><strong>Do you ship to my home?</strong><br>
+No. Frozen semen ships only to qualified veterinary clinics.</p>
+
+<p><strong>Can you help me find a repro clinic?</strong><br>
+Yes. Tell us your location and we’ll guide you.</p>
+
+</div>
+
+<section class="cta" id="inquiry">
+  <h2>Request the Breeding Packet</h2>
+  <p>Share a few details and I’ll reply with availability and next steps.</p>
+
+  <!-- Replace action URL with Formspree or site form endpoint -->
+  <form action="YOUR_FORM_ENDPOINT" method="POST" style="max-width:720px;margin:30px auto;text-align:left;">
+    
+    <label>Full Name<br>
+      <input name="name" required style="width:100%;padding:12px;margin-top:6px;margin-bottom:14px;">
+    </label>
+
+    <label>Email<br>
+      <input type="email" name="email" required style="width:100%;padding:12px;margin-top:6px;margin-bottom:14px;">
+    </label>
+
+    <label>Phone (optional)<br>
+      <input name="phone" style="width:100%;padding:12px;margin-top:6px;margin-bottom:14px;">
+    </label>
+
+    <label>Mare Breed / Age / Registration<br>
+      <input name="mare" style="width:100%;padding:12px;margin-top:6px;margin-bottom:14px;">
+    </label>
+
+    <label>Location (City / State)<br>
+      <input name="location" style="width:100%;padding:12px;margin-top:6px;margin-bottom:14px;">
+    </label>
+
+    <label>When are you trying to breed?<br>
+      <input name="timing" placeholder="Example: March–May 2026" style="width:100%;padding:12px;margin-top:6px;margin-bottom:14px;">
+    </label>
+
+    <label>Goals for this foal<br>
+      <textarea name="goals" rows="5" style="width:100%;padding:12px;margin-top:6px;margin-bottom:18px;"></textarea>
+    </label>
+
+    <button type="submit" style="background:#b89b5e;color:white;border:0;border-radius:6px;padding:14px 24px;font-weight:bold;cursor:pointer;">
+      Send Inquiry
+    </button>
+
+    <p style="font-size:13px;color:#666;margin-top:14px;">
+      Frozen semen ships to qualified reproductive veterinary clinics only.
+    </p>
+
+  </form>
+</section>
+
+<div class="container">
+<h2>Explore More</h2>
+<ul>
+  <li><a href="/bloodline">Bloodline Story</a></li>
+  <li><a href="/war-pony">War Pony Series</a></li>
+  <li><a href="/contact">Contact</a></li>
+</ul>
+</div>
+
+<footer>
+LeopardFriesian.com • Southern Indiana • Shipping Nationwide
+</footer>
+
 </body>
 </html>
-EOF
-done
+
+
 
