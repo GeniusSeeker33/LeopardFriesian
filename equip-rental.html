@@ -1,31 +1,187 @@
-for f in index.html siblings.html frozengold.html farm-blog.html equip-rental.html fdas-nft-launch.html; do
-cat <<EOF > $f
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Leopard Friesian</title>
+  <title>Equipment Rental | Leopard Friesian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Equipment rentals from the farm: forestry mulcher, land clearing, driveway refresh, and property improvement support in Southern Indiana." />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body id="top">
 
-  <!-- Shared Header -->
-  <div id="site-header"></div>
+<div id="site-header"></div>
 
-  <!-- Page Content -->
-  <main class="container">
-    <h1>${f%.html}</h1>
-    <p>Content coming next.</p>
-  </main>
+<main class="page">
 
-  <!-- Shared Footer -->
-  <div id="site-footer"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
 
-  <script src="/js/main.js"></script>
+      <div class="hero-copy">
+        <p class="kicker">Equipment Rental</p>
+        <h1>Farm Equipment Rentals + Land Help</h1>
+
+        <div class="hero-sub">
+          <p>Need to clean trails, reclaim fence lines, or refresh a driveway?</p>
+          <p class="fine">Serving Southern Indiana + nearby regions. Tell us what you’re building and we’ll help you price it out.</p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#inquiry">Request Availability</a>
+          <a class="btn" href="/farm-blog.html">Farm Journal</a>
+          <a class="btn" href="/frozengold.html">FDAS Phoenix</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <!-- Swap this image anytime -->
+        <img src="/assets/img/FDAS_Phoenix_baby.png" alt="Leopard Friesian Farm" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFERINGS -->
+  <section class="section">
+    <div class="container">
+      <h2>What we offer</h2>
+      <p class="lead">Simple options: hourly help, half-day, full-day, or multi-day projects. We’ll quote fast.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Forestry Mulcher</h3>
+          <p>Trail clearing, brush removal, reclaiming pasture edges, fence-line cleanup, and access paths.</p>
+        </div>
+
+        <div class="card">
+          <h3>Driveway + Access Refresh</h3>
+          <p>Light grading / smoothing coordination, gravel refresh planning, and punch-list improvements.</p>
+        </div>
+
+        <div class="card">
+          <h3>Farm Project Support</h3>
+          <p>Small property improvement projects: cleanup days, hauling coordination, and “get it done” help.</p>
+        </div>
+      </div>
+
+      <p class="fine" style="margin-top:12px;">
+        Note: exact equipment availability may vary by week. We’ll confirm timelines and a clean scope before booking.
+      </p>
+    </div>
+  </section>
+
+  <!-- PRICING GUIDANCE -->
+  <section class="section">
+    <div class="container">
+      <h2>Pricing (simple guidance)</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Quick Job</h3>
+          <p><span class="mono">1–2 hours</span> • best for a small trail opener or one problem area.</p>
+        </div>
+
+        <div class="card">
+          <h3>Half Day</h3>
+          <p><span class="mono">3–5 hours</span> • best for fence lines, multiple small zones, or a focused clearing plan.</p>
+        </div>
+
+        <div class="card">
+          <h3>Full Day / Multi-Day</h3>
+          <p><span class="mono">6–8 hours/day</span> • best for full trail systems, pasture edges, or big reclamation projects.</p>
+        </div>
+      </div>
+
+      <p class="lead" style="margin-top:12px;">
+        Want an exact number? Send a few photos + your location and we’ll quote you.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <h2>How it works</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>1) Tell us the goal</h3>
+          <p>What do you want cleared or improved? Trails, fence lines, driveway, etc.</p>
+        </div>
+
+        <div class="card">
+          <h3>2) Share location + photos</h3>
+          <p>Photos/video help us quote accurately and avoid surprises.</p>
+        </div>
+
+        <div class="card">
+          <h3>3) Confirm scope + schedule</h3>
+          <p>We agree on the target area, time window, and what “done” looks like.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY FORM -->
+  <section class="section" id="inquiry">
+    <div class="container">
+      <h2>Request availability</h2>
+      <p class="lead">Fill this out and we’ll reply with next steps.</p>
+
+      <form class="form" action="https://formspree.io/f/mojnvnbo" method="POST">
+        <input type="hidden" name="_subject" value="🛠️ New Equipment Rental Inquiry" />
+        <input type="hidden" name="_captcha" value="false" />
+
+        <div class="form-grid">
+          <label>Full Name
+            <input name="name" required />
+          </label>
+
+          <label>Email
+            <input type="email" name="email" required />
+          </label>
+
+          <label>Phone (optional)
+            <input name="phone" />
+          </label>
+
+          <label>City / State
+            <input name="location" placeholder="Example: Corydon, IN" />
+          </label>
+        </div>
+
+        <label style="margin-top:12px;">What do you need help with?
+          <textarea name="scope" rows="5" placeholder="Tell us what you’re trying to clear or improve. Include approximate acreage/linear feet if you know it."></textarea>
+        </label>
+
+        <div class="form-grid" style="margin-top:12px;">
+          <label>Ideal date range
+            <input name="dates" placeholder="Example: Feb 20–24" />
+          </label>
+
+          <label>Photos / video link (optional)
+            <input name="media_link" placeholder="Google Drive / Dropbox / iCloud link" />
+          </label>
+        </div>
+
+        <button class="btn primary" type="submit" style="margin-top:12px;">
+          Send Inquiry
+        </button>
+
+        <p class="fine">
+          We’ll confirm availability, basic safety requirements, and a clear scope before booking.
+        </p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="/js/main.js"></script>
+
 </body>
 </html>
-EOF
-done
+
 

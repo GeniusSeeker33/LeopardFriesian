@@ -1,31 +1,147 @@
-for f in index.html siblings.html frozengold.html farm-blog.html equip-rental.html fdas-nft-launch.html; do
-cat <<EOF > $f
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Leopard Friesian</title>
+  <title>Farm Journal | Leopard Friesian</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Behind the scenes of the Leopard Friesian farm, breeding program, and daily life with FDAS Phoenix." />
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body id="top">
 
-  <!-- Shared Header -->
-  <div id="site-header"></div>
+<div id="site-header"></div>
 
-  <!-- Page Content -->
-  <main class="container">
-    <h1>${f%.html}</h1>
-    <p>Content coming next.</p>
-  </main>
+<main class="page">
 
-  <!-- Shared Footer -->
-  <div id="site-footer"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
 
-  <script src="/js/main.js"></script>
+    <div class="hero-copy">
+      <p class="kicker">Farm Journal</p>
+      <h1>Life Behind the Leopard Friesians</h1>
+
+      <div class="hero-sub">
+        <p>Training. Breeding. Farm life. Real moments with real horses.</p>
+        <p class="fine">Follow the journey of FDAS Phoenix and the future of the bloodline.</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn primary" href="/frozengold.html">Request Breeding Packet</a>
+        <a class="btn" href="/war-pony.html">War Pony Gallery</a>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <img src="/assets/img/FDAS_Phoenix_baby.png" alt="FDAS Phoenix" />
+    </div>
+
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <h2>From the Farm</h2>
+    <p class="lead">
+      This journal shares the real story of building the Leopard Friesian program —
+      the victories, the lessons, and the everyday moments that shape the future
+      of this rare and magical bloodline.
+    </p>
+  </div>
+</section>
+
+<!-- BLOG CARDS -->
+<section class="section">
+  <div class="container">
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>The Beginning of the Bloodline</h3>
+        <p>
+          How Brody and Mandy created the first Leopard Friesian foals and how
+          Phoenix became the final and most important chapter.
+        </p>
+        <a class="text-link" href="#">Read story →</a>
+      </div>
+
+      <div class="card">
+        <h3>Why Frozen Gold Exists</h3>
+        <p>
+          The decision to preserve Phoenix’s genetics and offer frozen semen to
+          mare owners who value beauty, temperament, and legacy.
+        </p>
+        <a class="text-link" href="#">Read story →</a>
+      </div>
+
+      <div class="card">
+        <h3>Daily Life on the Farm</h3>
+        <p>
+          Feeding routines, training days, muddy boots, sunsets, and the quiet
+          magic of living with horses every day.
+        </p>
+        <a class="text-link" href="#">Read story →</a>
+      </div>
+
+      <div class="card">
+        <h3>The Future of the Breed</h3>
+        <p>
+          What comes next for the Leopard Friesian program and the long-term
+          vision for the bloodline.
+        </p>
+        <a class="text-link" href="#">Read story →</a>
+      </div>
+
+      <div class="card">
+        <h3>Why Temperament Matters</h3>
+        <p>
+          Beauty attracts attention, but temperament builds lifelong partnerships.
+          Phoenix represents both.
+        </p>
+        <a class="text-link" href="#">Read story →</a>
+      </div>
+
+      <div class="card">
+        <h3>Training Phoenix</h3>
+        <p>
+          A look into the training journey and the philosophy behind raising
+          thoughtful, intelligent horses.
+        </p>
+        <a class="text-link" href="#">Read story →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+
+    <div class="card" style="text-align:center;">
+      <h2>Interested in Breeding to Phoenix?</h2>
+      <p class="lead">
+        Reach out to receive the full breeding packet and availability.
+      </p>
+
+      <div class="cta-row" style="justify-content:center;">
+        <a class="btn primary" href="/frozengold.html">Request Packet</a>
+        <a class="btn" href="/siblings.html">Meet the Bloodline</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="/js/main.js"></script>
+
 </body>
 </html>
-EOF
-done
+
 
