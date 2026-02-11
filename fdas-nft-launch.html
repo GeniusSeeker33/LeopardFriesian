@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta
     name="description"
-    content="FDAS Phoenix FrozenGold — 30 Redeemable Breeding Package NFTs on Hedera. Launch Feb 17, 2026 (Fire Horse)."
+    content="War Pony Genesis — FDAS Phoenix on Hedera. 30 NFT cultural artifacts. First tranche #01–#06 launches Feb 17, 2026 (Fire Horse) on SentX."
   />
-  <title>FDAS Phoenix FrozenGold — Fire Horse Launch</title>
+  <title>War Pony Genesis — FDAS Phoenix</title>
 
   <!-- Use the site-wide stylesheet -->
   <link rel="stylesheet" href="/css/styles.css" />
@@ -153,7 +153,7 @@
       color:var(--muted);
       font-size:15px;
       line-height:1.6;
-      max-width: 62ch;
+      max-width: 70ch;
       margin: 6px 0 0;
     }
     .nft .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
@@ -199,6 +199,10 @@
     .nft .card h3{margin:0 0 6px; font-size:15px}
     .nft .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.65}
     .nft .card li{margin:6px 0}
+    .nft .hl{
+      border:1px solid rgba(245,196,90,.30);
+      background: linear-gradient(180deg, rgba(245,196,90,.10), rgba(0,0,0,.18));
+    }
 
     .nft .steps{display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; margin-top:12px}
     @media (max-width: 1020px){ .nft .steps{grid-template-columns:1fr} }
@@ -231,17 +235,13 @@
       grid-template-columns: repeat(3, 1fr);
       gap:10px;
       min-height: 240px;
+      overflow:hidden;
     }
     @media (max-width: 520px){ .nft .mediaStrip{grid-template-columns:1fr} }
-    .nft .ph{
-      border-radius:16px;
-      border:1px dashed rgba(255,255,255,.18);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.12));
-      display:flex; align-items:center; justify-content:center;
-      color: rgba(255,255,255,.45);
-      font-size:12px;
-      padding:10px;
-      text-align:center;
+    .nft .mediaStrip img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      border-radius:14px; border:1px solid rgba(255,255,255,.10);
+      filter: contrast(1.02) saturate(1.04);
     }
 
     .nft .buyBox{
@@ -338,17 +338,17 @@
         <a class="brand" href="#top">
           <div class="mark" aria-hidden="true"></div>
           <div>
-            <strong>FDAS Phoenix FrozenGold</strong>
-            <span>Fire Horse Release • Feb 17, 2026</span>
+            <strong>War Pony Genesis</strong>
+            <span>FDAS Phoenix • Hedera • Feb 17, 2026</span>
           </div>
         </a>
 
         <nav class="nav" aria-label="Launch page navigation">
-          <a href="#what">What You Receive</a>
-          <a href="#lineage">Soul Lineage</a>
-          <a href="#proof">Transparency</a>
-          <a href="#how">How Redemption Works</a>
-          <a href="#mint">Launch</a>
+          <a href="#about">About</a>
+          <a href="#phoenix">Meet Phoenix</a>
+          <a href="#genesis">Genesis Details</a>
+          <a href="#collect">Where to Collect</a>
+          <a href="#whyhedera">Why Hedera</a>
           <a href="#faq">FAQ</a>
         </nav>
       </div>
@@ -357,31 +357,31 @@
         <div>
           <div class="heroMedia">
             <!-- Put your hero image here -->
-            <img src="/assets/img/phoenix-hero.jpg" alt="FDAS Phoenix — FrozenGold" onerror="this.style.display='none';" />
+            <img src="/assets/img/FDAS Phoenix_home.png" alt="FDAS Phoenix — War Pony Genesis" onerror="this.style.display='none';" />
 
             <div class="heroOverlay">
               <div>
                 <div class="chips">
-                  <div class="chip"><b>30</b> Redeemable Breeding Package NFTs</div>
-                  <div class="chip"><b>$2,500</b> All-Inclusive</div>
-                  <div class="chip"><b>Hedera</b> Verified Utility</div>
+                  <div class="chip"><b>30</b> Genesis NFTs</div>
+                  <div class="chip"><b>First Drop</b> Serials #01–#30</div>
+                  <div class="chip"><b>Hedera</b> Native Collection</div>
                 </div>
 
-                <h1>FrozenGold for a Soul Lineage.</h1>
+                <h1>War Pony Genesis.</h1>
                 <p class="sub">
-                  FDAS Phoenix Genesis is a limited release of 30 redeemable NFTs that secure one FrozenGold breeding package
-                  — created to honor lineage, intention, and verifiable real-world fulfillment.
+                  A limited NFT collection honoring FDAS Phoenix — introduced with restraint and clarity before any breeding season,
+                  pairings, or commercial offerings are announced.
                 </p>
 
                 <div class="heroActions">
-                  <a class="btn primary" href="#mint" id="ctaPrimary">Connect Wallet</a>
-                  <a class="btn" href="#how">How redemption works</a>
-                  <a class="btn" href="#proof">View transparency</a>
+                  <a class="btn primary" href="#collect" id="ctaPrimary">View on SentX</a>
+                  <a class="btn" href="#phoenix">Meet FDAS Phoenix</a>
+                  <a class="btn" href="#genesis">Genesis details</a>
                 </div>
               </div>
 
               <div class="note">
-                Launch: <span class="mono" id="launchText">Feb 17, 2026 • Fire Horse • America/New_York</span>
+                Public release: <span class="mono" id="launchText">Feb 17, 2026 • 05:00 UTC • Fire Horse</span>
               </div>
             </div>
           </div>
@@ -393,7 +393,7 @@
               <div class="label" style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px;">Countdown to Release</div>
               <div style="font-weight:950; font-size:18px; margin-top:6px;">Fire Horse Opening</div>
             </div>
-            <a class="btn small" href="#mint">Go to Launch</a>
+            <a class="btn small" href="#collect">Collect</a>
           </div>
 
           <div class="countdown" role="timer" aria-live="polite">
@@ -407,250 +407,154 @@
 
           <div class="kpiRow">
             <div class="kpi">
-              <div class="label">Supply</div>
-              <div class="value"><span id="supplyLeft">30</span> / 30</div>
+              <div class="label">Total Supply</div>
+              <div class="value"><span id="supplyTotal">30</span></div>
             </div>
             <div class="kpi">
-              <div class="label">Price</div>
-              <div class="value">$2,500</div>
+              <div class="label">First Drop</div>
+              <div class="value">#01–#30</div>
             </div>
           </div>
 
           <div class="kpiRow">
             <div class="kpi">
-              <div class="label">Chain</div>
-              <div class="value">Hedera</div>
+              <div class="label">Target Price</div>
+              <div class="value"><span class="mono" id="targetPrice">6,500 HBAR</span></div>
             </div>
             <div class="kpi">
-              <div class="label">Type</div>
-              <div class="value">Redeemable</div>
+              <div class="label">Market</div>
+              <div class="value">SentX</div>
             </div>
           </div>
 
           <div class="divider"></div>
 
           <div class="note">
-            This is <b>not racing</b> and <b>not fractional ownership</b>.
-            Each NFT represents a <b>redeemable FrozenGold breeding package</b> with a transparent redemption trail.
+            War Pony Genesis is a <b>cultural artifact series</b>. It is <b>not</b> breeding rights, not fractional ownership,
+            and not a roadmap-driven utility project.
           </div>
         </aside>
       </div>
 
-      <section id="what" class="panel section">
-        <h2>What you receive</h2>
+      <section id="about" class="panel section">
+        <h2>About this launch</h2>
         <p>
-          Each Genesis NFT secures one FrozenGold Breeding Package for FDAS Phoenix. The package is designed to be simple,
-          premium, and fulfillment-focused.
+          War Pony Genesis is the first public chapter of FDAS Phoenix’s story on Hedera. This limited collection of 30 NFTs introduces
+          Phoenix to collectors and supporters with restraint and clarity — a legacy release, not a hype event.
         </p>
-
-        <div class="grid3">
-          <div class="card">
-            <h3>1 NFT = 1 Breeding Package</h3>
-            <ul>
-              <li>Redeemable right to one FrozenGold breeding package</li>
-              <li>Transferable until redeemed</li>
-              <li>On-chain redemption status recorded</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Included in the package</h3>
-            <ul>
-              <li>Straw allocation per your protocol (define below)</li>
-              <li>Handling + deposit + shipping coordination</li>
-              <li>Support concierge for mare owners / vets</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Foal registration</h3>
-            <ul>
-              <li>One registered foal included</li>
-              <li>Clear process + documentation checkpoints</li>
-              <li>Optional add-ons (as defined in terms)</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="note" style="margin-top:14px;">
-          Customize this with your exact straw protocol (example):
-          “Standard allocation: 4 straws per cycle unless your veterinarian advises otherwise.”
+        <p class="note">
+          Public sale opens <span class="mono">Feb 17, 2026 • 05:00 UTC</span> (Chinese New Year • Year of the Fire Horse).
         </p>
       </section>
 
-      <section id="lineage" class="panel section">
-        <h2>Soul lineage</h2>
+      <section id="phoenix" class="panel section">
+        <h2>Meet FDAS Phoenix</h2>
         <p>
-          This release is about preserving a living legacy. Phoenix isn’t marketed through race results — he’s shared through
-          story, lineage, intention, and proof of real-world fulfillment.
+          FDAS Phoenix is a Friesian Appaloosa stallion representing nearly two decades of intentional, purpose-driven breeding through
+          Friesian Dreams and Spots (FDAS). Phoenix is a real, living horse, stewarded with long-term care and professional handling.
+        </p>
+
+        </p>
+
+        <div class="mediaStrip" aria-label="Phoenix photo gallery">
+          <!-- Replace with your real Phoenix images -->
+          <img src="/assets/img/FDAS Phoenix_7 yrs.png" alt="FDAS Phoenix portrait" onerror="this.style.display='none';" />
+          <img src="/assets/img/FDAS Phoenix Hugs.png" alt="FDAS Phoenix standing" onerror="this.style.display='none';" />
+          <img src="/assets/img/FDAS Phoenix Kiss.png" alt="FDAS Phoenix side profile" onerror="this.style.display='none';" />
+        </div>
+      </section>
+
+      <section id="genesis" class="panel section">
+        <h2>Genesis details</h2>
+        <p>
+          This series exists as a cultural and historical marker — released before any breeding season, pairings, or commercial offerings
+          are announced.
+        </p>
+
+        <div class="grid3">
+          <div class="card hl">
+            <h3>Fixed supply</h3>
+            <ul>
+              <li><b>30</b> total NFTs, fixed and immutable</li>
+              <li>Released in small tranches</li>
+              <li>First release: <b>Serials #01–#30</b></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Collector clarity</h3>
+            <ul>
+              <li>No breeding rights</li>
+              <li>No ownership of the stallion</li>
+              <li>No revenue share or financial participation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Stewardship</h3>
+            <ul>
+              <li>Legacy-first approach</li>
+              <li>Real horse, real provenance</li>
+              <li>Collected, not promised</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="collect" class="panel section">
+        <h2>Where to collect</h2>
+        <p>
+          This release is listed directly on Hedera NFT marketplaces. Start with SentX, and we will add additional marketplace links as listings go live.
         </p>
 
         <div class="grid3">
           <div class="card">
-            <h3>Origin</h3>
+            <h3>SentX (Primary)</h3>
             <p class="note" style="margin:8px 0 0;">
-              “From Brody x Mandy — Phoenix is the final foal of our original Leopard Friesian journey.”
+              View the War Pony Genesis listings and collect Serials #01–#30.
             </p>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="#" id="btnSentX" target="_blank" rel="noopener">View on SentX</a>
+            </div>
           </div>
+
           <div class="card">
-            <h3>FrozenGold</h3>
+            <h3>Zuse (Optional)</h3>
             <p class="note" style="margin:8px 0 0;">
-              “Collection batches documented. Motility recorded. Storage maintained and attested.”
+              Secondary marketplace link (add when live).
             </p>
+            <div style="margin-top:12px;">
+              <a class="btn" href="#" id="btnZuse" target="_blank" rel="noopener">View on Zuse</a>
+            </div>
           </div>
+
           <div class="card">
-            <h3>Echoes of the Bloodline</h3>
+            <h3>Follow the journey</h3>
             <p class="note" style="margin:8px 0 0;">
-              “We capture lineage as a living story — with integrity, transparency, and stewardship.”
+              Updates and Phoenix media will be shared on social.
             </p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn" href="https://x.com/leopardfriesian" id="btnX" target="_blank" rel="noopener">X / Twitter</a>
+              <a class="btn" href="https://instagram.com/leopardfriesian" target="_blank" rel="noopener">Instagram</a>
+            </div>
           </div>
         </div>
 
         <div class="divider"></div>
 
-        <p class="note">
-          Optional: embed a short 60-second video here (YouTube/Vimeo). Add the iframe src when ready.
-        </p>
-
-        <div class="card" style="padding:0; overflow:hidden;">
-          <div style="position:relative; padding-top:56.25%;">
-            <iframe
-              title="FDAS Phoenix — FrozenGold Overview"
-              src=""
-              style="position:absolute; inset:0; width:100%; height:100%; border:0;"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
+        <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <div style="font-weight:900;">Launch time</div>
+            <div class="note">Feb 17, 2026 • <span class="mono">05:00 UTC</span> (Fire Horse)</div>
           </div>
+          <a class="btn primary" href="#" id="btnCollectNow" target="_blank" rel="noopener">Collect on SentX</a>
         </div>
       </section>
 
-      <section id="proof" class="panel section">
-        <h2>Transparency</h2>
+      <section id="whyhedera" class="panel section">
+        <h2>Why Hedera</h2>
         <p>
-          Our “trust layer” is documentation and cadence: inventory, redemption status, and fulfillment checkpoints.
-          (Start simple, expand after sell-out.)
+          War Pony Genesis is built on Hedera for its sustainability, security, and long-term reliability. Hedera provides a durable network for
+          preserving provenance and cultural artifacts over time.
         </p>
-
-        <div class="grid3">
-          <div class="card">
-            <h3>Inventory attestation</h3>
-            <ul>
-              <li>Total straws available (high-level)</li>
-              <li>Storage and handling process</li>
-              <li>“Last attested” date</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Redemption trail</h3>
-            <ul>
-              <li>Redeem action recorded on-chain</li>
-              <li>Status: unredeemed / redeemed</li>
-              <li>Privacy-protected details (hashed)</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Fulfillment proof</h3>
-            <ul>
-              <li>Shipping confirmation (hashed reference)</li>
-              <li>Registration process checkpoint</li>
-              <li>Monthly update cadence</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="note" style="margin-top:14px;">
-          Add your public links here when ready (HashScan, marketplace collection page, terms PDF, etc.).
-        </p>
-      </section>
-
-      <section id="how" class="panel section">
-        <h2>How redemption works</h2>
-        <p>A simple five-step flow designed for real-world fulfillment and clarity.</p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="n">1</div>
-            <div>
-              <div class="t">Acquire NFT</div>
-              <div class="d">Buy on launch day or via the marketplace (until redeemed).</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="n">2</div>
-            <div>
-              <div class="t">Connect wallet</div>
-              <div class="d">Connect your Hedera wallet to begin redemption.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="n">3</div>
-            <div>
-              <div class="t">Submit details</div>
-              <div class="d">Mare + vet info collected with privacy protection.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="n">4</div>
-            <div>
-              <div class="t">Allocation + shipping</div>
-              <div class="d">Straws allocated and shipment coordinated with your vet.</div>
-            </div>
-          </div>
-          <div class="step">
-            <div class="n">5</div>
-            <div>
-              <div class="t">Registration</div>
-              <div class="d">Foal registration processed per the included package terms.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="mint" class="panel section">
-        <h2>Launch</h2>
-        <p>
-          Use this area for (A) “Connect Wallet” + mint on your site, or (B) a button that links directly to your marketplace listing when live.
-        </p>
-
-        <div class="mint">
-          <div class="mediaStrip" aria-label="Collection media placeholders">
-            <div class="ph">Replace with Phoenix image 1<br>(close-up face)</div>
-            <div class="ph">Replace with Phoenix image 2<br>(full body)</div>
-            <div class="ph">Replace with Phoenix image 3<br>(black & white)</div>
-          </div>
-
-          <div class="buyBox" aria-label="Purchase panel">
-            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-              <div style="font-weight:950;">Phoenix FrozenGold Genesis</div>
-              <span class="pill"><span class="dot warn" id="statusDot"></span><span id="statusText">Pre-launch</span></span>
-            </div>
-
-            <div class="price">$2,500 <span style="font-size:12px; color:var(--muted); font-weight:800;">USD</span></div>
-            <div class="note">30 total • limited release • redeemable utility on Hedera</div>
-
-            <div class="divider"></div>
-
-            <div class="formRow">
-              <button class="btn primary" style="flex:1;" id="btnConnect" type="button">Connect Wallet</button>
-              <button class="btn" style="flex:1;" id="btnBuy" type="button">Buy / Mint</button>
-            </div>
-
-            <div class="formRow">
-              <input class="input" id="waitEmail" type="email" placeholder="Join the waitlist (email)" />
-              <button class="btn" id="btnWait" type="button">Notify Me</button>
-            </div>
-
-            <div class="tiny">
-              By participating you agree to the <a href="#" id="termsLink">Terms</a>. This is a redeemable package NFT.
-              It is not racing-related, and it does not represent fractional ownership.
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="note">
-              Marketplace link (add when live):<br />
-              <span class="mono" id="marketLink">https://your-marketplace-link-here</span>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section id="faq" class="panel section">
@@ -658,39 +562,29 @@
 
         <div class="faq">
           <details>
-            <summary>Is this racing-related?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">No. FDAS Phoenix Genesis is centered on lineage, story, and a redeemable FrozenGold breeding package.</div>
+            <summary>Do these NFTs include breeding rights?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">No. War Pony Genesis is a cultural artifact series and does not convey breeding rights, ownership of Phoenix, or financial participation.</div>
           </details>
 
           <details>
-            <summary>Does this NFT mean I own Phoenix (or a share of him)?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">No. Each NFT represents a redeemable breeding package. It is not fractional ownership.</div>
+            <summary>How many NFTs exist in total?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">Total supply is fixed at 30. The first public release is Serials #01–#30.</div>
           </details>
 
           <details>
-            <summary>How many straws are included per breeding package?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">Define your standard protocol here (example: “4 straws per cycle unless your veterinarian advises otherwise”).</div>
+            <summary>Where do I collect?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">Start with SentX. Additional marketplace links (like Zuse) can be added as listings go live.</div>
           </details>
 
           <details>
-            <summary>What if my mare doesn’t take on the first cycle?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">State your policy clearly in the terms (time window, re-try conditions, vet documentation, etc.).</div>
-          </details>
-
-          <details>
-            <summary>Can I transfer or resell the NFT?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">Yes, until it is redeemed. After redemption, the NFT is marked redeemed (or burned) so it cannot be used again.</div>
-          </details>
-
-          <details>
-            <summary>How is privacy handled for mare/vet information?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">Private details should be handled off-chain and referenced on-chain by hashed pointers for proof without exposing personal information.</div>
+            <summary>Is this connected to Echoes of the Bloodline right now?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">Not at this stage. War Pony Genesis is intentionally separate and exists as Phoenix’s first public chapter on Hedera.</div>
           </details>
         </div>
       </section>
 
       <div class="footer">
-        <div>© <span id="yearNow"></span> FDAS • Phoenix FrozenGold • Hedera-based utility</div>
+        <div>© <span id="yearNow"></span> FDAS • War Pony Genesis • Hedera-based cultural artifacts</div>
         <div class="links">
           <a href="#" id="footerTerms">Terms</a>
           <a href="#" id="footerPrivacy">Privacy</a>
@@ -709,11 +603,21 @@
       // ==========================
       // CONFIG (edit these)
       // ==========================
-      const LAUNCH_ISO = "2026-02-17T12:00:00-05:00"; // America/New_York placeholder
+      // Public sale moment: Feb 17, 2026 05:00 UTC
+      const LAUNCH_ISO = "2026-02-17T05:00:00Z";
+
+      // Replace these with your real links
       const TERMS_URL = "#";
       const PRIVACY_URL = "#";
-      const MARKETPLACE_URL = "https://your-marketplace-link-here";
-      let SUPPLY_LEFT = 30;
+      const SENTX_URL = "https://sentx.io";      // TODO: paste your collection/listing URL
+      const ZUSE_URL  = "https://zuse.market";   // TODO: paste your collection/listing URL
+      const X_URL = "https://x.com/leopardfriesian";
+      const INSTAGRAM_URL = "https://instagram.com/leopardfriesian";
+
+      // Display-only values (optional)
+      const TOTAL_SUPPLY = 30;
+      const FIRST_DROP = "#01–#06";
+      const TARGET_PRICE_TEXT = "6,500 HBAR";
 
       // ==========================
       // Utilities
@@ -730,20 +634,6 @@
 
       const launchDate = new Date(LAUNCH_ISO);
 
-      function setStatus(){
-        const now = new Date();
-        const statusText = $("statusText");
-        const dot = $("statusDot");
-
-        if (now < launchDate){
-          statusText.textContent = "Pre-launch";
-          dot.className = "dot warn";
-        } else {
-          statusText.textContent = "Live";
-          dot.className = "dot";
-        }
-      }
-
       function updateCountdown(){
         const now = new Date();
         let diff = launchDate - now;
@@ -759,58 +649,45 @@
         $("cdHours").textContent = pad2(hours);
         $("cdMins").textContent = pad2(mins);
         $("cdSecs").textContent = pad2(secs);
-
-        if (totalSeconds === 0) setStatus();
       }
 
       function wireLinks(){
-        $("termsLink").href = TERMS_URL;
         $("footerTerms").href = TERMS_URL;
         $("footerPrivacy").href = PRIVACY_URL;
-        $("marketLink").textContent = MARKETPLACE_URL;
+
+        $("btnSentX").href = SENTX_URL;
+        $("btnCollectNow").href = SENTX_URL;
+
+        $("btnZuse").href = ZUSE_URL;
+        $("btnX").href = X_URL;
+        $("btnIG").href = IG_URL;
       }
 
-      function renderSupply(){ $("supplyLeft").textContent = SUPPLY_LEFT; }
+      function renderStatic(){
+        $("yearNow").textContent = new Date().getFullYear();
+        $("supplyTotal").textContent = TOTAL_SUPPLY;
+        $("targetPrice").textContent = TARGET_PRICE_TEXT;
 
-      // ==========================
-      // Wallet + Mint placeholders
-      // ==========================
-      function onConnectWallet(){
-        showToast("<b>Wallet connect</b><br/>Ready for HashPack / WalletConnect integration.");
-      }
-
-      function onBuyMint(){
-        const now = new Date();
-        if (now < launchDate){
-          showToast("<b>Not live yet.</b><br/>Launch opens on <span class='mono'>Feb 17, 2026</span> (Fire Horse). Join the waitlist below.");
-          return;
-        }
-        showToast("<b>Buy / Mint</b><br/>Connect your mint flow here (or link this button to your marketplace listing).");
-      }
-
-      function onWaitlist(){
-        const email = $("waitEmail").value.trim();
-        if (!email || !email.includes("@")){
-          showToast("<b>Enter a valid email.</b><br/>We’ll notify you when the Fire Horse release opens.");
-          return;
-        }
-        showToast("<b>You're on the list.</b><br/>We’ll notify <span class='mono'>" + email.replaceAll("<","&lt;") + "</span>.");
-        $("waitEmail").value = "";
+        // Human-readable launch label
+        $("launchText").textContent = "Feb 17, 2026 • 05:00 UTC • Fire Horse";
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        $("yearNow").textContent = new Date().getFullYear();
-        $("launchText").textContent = "Feb 17, 2026 • Fire Horse • America/New_York";
         wireLinks();
-        renderSupply();
-        setStatus();
+        renderStatic();
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        $("btnConnect").addEventListener("click", onConnectWallet);
-        $("btnBuy").addEventListener("click", onBuyMint);
-        $("btnWait").addEventListener("click", onWaitlist);
         $("toastClose").addEventListener("click", hideToast);
+
+        // Optional: if someone clicks "Collect" before launch, gently message them.
+        $("btnCollectNow").addEventListener("click", (e) => {
+          const now = new Date();
+          if (now < launchDate){
+            // Allow navigation but also show a gentle note
+            showToast("<b>Not live yet.</b><br/>Public release opens <span class='mono'>Feb 17, 2026 • 05:00 UTC</span> (Fire Horse).");
+          }
+        });
       });
     </script>
   </main>
@@ -819,4 +696,7 @@
   <script src="/js/main.js" defer></script>
 </body>
 </html>
+
+
+
 
