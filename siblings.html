@@ -6,7 +6,6 @@
   <title>Siblings | LeopardFriesian</title>
 
   <meta name="description" content="Meet the siblings of FDAS Phoenix — the Leopard Friesian foals from Brody x Mandy." />
-
   <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
@@ -19,7 +18,7 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="kicker">Siblings</p>
-          <h1>The Siblings</h1>
+          <h1>Meet the Siblings</h1>
 
           <div class="hero-sub">
             <p class="lead">Six Leopard Friesian foals from Brody x Mandy — the legacy that led to FDAS Phoenix.</p>
@@ -47,60 +46,66 @@
     <!-- GRID -->
     <section class="section">
       <div class="container">
-        <h2>Meet the Siblings</h2>
-        <p class="lead">Tap to explore. We can expand each into a dedicated profile page later.</p>
+        <h2>The Siblings</h2>
+        <p class="lead">Tap a card to read each horse’s individual story.</p>
 
         <div class="cards">
-          <article class="card">
+          <!-- DAHLIA -->
+          <a class="card" href="/dahlia.html" aria-label="Read FDAS Dahlia’s story">
             <p class="kicker">2007</p>
             <h3>FDAS Dahlia</h3>
             <img class="card-img" src="/assets/img/FDAS%20Dahlia_baby.png" alt="FDAS Dahlia" loading="lazy" decoding="async" />
             <p><strong>DOB:</strong> April 28, 2007</p>
             <p>One of the earliest Leopard Friesian foals that proved the magic of the Brody x Mandy cross.</p>
-          </article>
+          </a>
 
-          <article class="card">
+          <!-- ELI -->
+          <a class="card" href="/eli.html" aria-label="Read FDAS Eli’s story">
             <p class="kicker">2008</p>
             <h3>FDAS Eli</h3>
             <img class="card-img" src="/assets/img/FDAS%20Eli_baby.png" alt="FDAS Eli" loading="lazy" decoding="async" />
             <p><strong>DOB:</strong> May 1, 2008</p>
             <p>A continuation of the developing Leopard Friesian legacy with presence and athleticism.</p>
-          </article>
+          </a>
 
-          <article class="card">
+          <!-- ZOE -->
+          <a class="card" href="/zoe.html" aria-label="Read FDAS Zoe’s story">
             <p class="kicker">2011</p>
             <h3>FDAS Zoe</h3>
             <img class="card-img" src="/assets/img/FDAS_Zoe_baby.png" alt="FDAS Zoe" loading="lazy" decoding="async" />
             <p><strong>DOB:</strong> May 5, 2011</p>
             <p>Another step forward in refining the Friesian-Appaloosa cross.</p>
-          </article>
+          </a>
 
-          <article class="card">
+          <!-- APOLLO -->
+          <a class="card" href="/apollo.html" aria-label="Read FDAS Apollo’s story">
             <p class="kicker">2012</p>
             <h3>FDAS Apollo</h3>
             <img class="card-img" src="/assets/img/FDAS_Apollo_baby.png" alt="FDAS Apollo" loading="lazy" decoding="async" />
             <p><strong>DOB:</strong> May 10, 2012</p>
             <p>Strength, expression, and movement continued to define the bloodline.</p>
-          </article>
+          </a>
 
-          <article class="card">
+          <!-- CONFETTI -->
+          <a class="card" href="/confetti.html" aria-label="Read FDAS Confetti’s story">
             <p class="kicker">2012</p>
             <h3>FDAS Confetti</h3>
             <img class="card-img" src="/assets/img/FDAS_Confetti_baby.png" alt="FDAS Confetti" loading="lazy" decoding="async" />
             <p><strong>DOB:</strong> July 2012</p>
             <p>The colorful personality of the herd and a joyful expression of the Leopard Friesian pattern.</p>
-          </article>
+          </a>
 
-          <article class="card">
+          <!-- PHOENIX -->
+          <a class="card" href="/phoenix.html" aria-label="Read FDAS Phoenix’s story">
             <p class="kicker">2013</p>
             <h3>FDAS Phoenix</h3>
             <img class="card-img" src="/assets/img/FDAS_Phoenix_baby.png" alt="FDAS Phoenix as a foal" loading="lazy" decoding="async" />
             <p><strong>DOB:</strong> July 25, 2013</p>
             <p>The final foal of Brody x Mandy and the future of the Leopard Friesian breeding program.</p>
             <p style="margin-top:12px;">
-              <a class="btn primary" href="/frozengold.html">View Stud Services</a>
+              <span class="btn primary">Open Phoenix Story</span>
             </p>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -149,7 +154,13 @@
 
   <div id="site-footer"></div>
   <script src="/js/main.js" defer></script>
+
+  <!-- Optional: ensures linked cards don't look like default blue links if your CSS doesn't already handle it -->
+  <style>
+    .cards a.card { color: inherit; text-decoration: none; }
+  </style>
 </body>
 </html>
+
 
 

@@ -1,9 +1,14 @@
 <!-- /partials/footer.html -->
 <footer class="site-footer">
   <div class="container footer-inner">
+
     <p class="footer-brand">
       <strong>LeopardFriesian</strong> &bull; FDAS<br />
       Corydon, Indiana &bull; Phoenix &bull; FrozenGold
+      <br>
+      <span style="font-size:12px; opacity:.75;">
+        Built on Hedera • Powered by the GeniusSeeker ecosystem
+      </span>
     </p>
 
     <p class="footer-links">
@@ -15,12 +20,13 @@
     </p>
 
     <p class="fine">&copy; <span id="year"></span> LeopardFriesian</p>
+
   </div>
 
   <script>
-    // Keep this tiny and safe even if JS partial injection fails elsewhere
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </footer>
+
 
 
