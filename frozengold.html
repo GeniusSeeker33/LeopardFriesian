@@ -9,6 +9,93 @@
 
   <!-- Site-wide CSS -->
   <link rel="stylesheet" href="/css/styles.css" />
+
+  <!-- Page-specific hero balance tweaks -->
+  <style>
+    /* Make the left hero column feel intentional + balanced against the cinematic image */
+    .hero-copy{
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 520px; /* helps match tall hero image; adjust if needed */
+      padding: 3.25rem;  /* add breathing room so it doesn't feel empty */
+      border-radius: 18px;
+    }
+
+    /* Warm glow that visually “connects” to the right-side FrozenGold art */
+    .hero-copy::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(
+        circle at 85% 50%,
+        rgba(245,196,90,0.18),
+        rgba(245,196,90,0.06) 32%,
+        transparent 62%
+      );
+      pointer-events:none;
+      z-index:0;
+    }
+
+    /* Keep content above the glow */
+    .hero-copy > *{
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Divider + micro-credibility line */
+    .hero-divider{
+      width: 64px;
+      height: 2px;
+      background: var(--accent, #f5c45a);
+      margin: 22px 0 14px;
+      opacity: .7;
+      border-radius: 99px;
+    }
+
+    .hero-subline{
+      color: var(--muted, rgba(255,255,255,.72));
+      font-size: .9rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+    }
+
+    /* Feature row adds bottom weight + polish */
+    .hero-features{
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: .92rem;
+      color: var(--muted, rgba(255,255,255,.72));
+      margin-top: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hero-features span{
+      opacity: .9;
+    }
+
+    /* Spacer pushes CTAs toward the bottom for better balance */
+    .hero-spacer{
+      flex: 1;
+      min-height: 14px;
+    }
+
+    /* Keep buttons and fine print grouped at the bottom */
+    .hero-cta{
+      margin-top: 0;
+    }
+
+    /* On smaller screens, let the hero-copy compress */
+    @media (max-width: 820px){
+      .hero-copy{
+        min-height: auto;
+        padding: 2.25rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -26,17 +113,30 @@
             <p>Friesian-Appaloosa legacy breeding for mare owners who value beauty, athleticism, and soul.</p>
           </div>
 
-          <div class="cta-row">
-            <a class="btn primary" href="#inquiry">Request Breeding Packet</a>
-            <a class="btn" href="mailto:info@leopardfriesian.com?subject=Availability%20Request%20-%20FDAS%20Phoenix">Check Availability</a>
+          <div class="hero-divider"></div>
+          <p class="hero-subline">Heritage Horse Registry • HH Reg #2539-2013</p>
+
+          <div class="hero-features" aria-label="Key details">
+            <span>✔ Frozen semen available</span>
+            <span>✔ Ships nationwide</span>
+            <span>✔ Vet clinic delivery</span>
           </div>
 
-          <p class="fine">Frozen semen ships to qualified reproductive veterinary clinics only.</p>
+          <div class="hero-spacer"></div>
+
+          <div class="hero-cta">
+            <div class="cta-row">
+              <a class="btn primary" href="#inquiry">Request Breeding Packet</a>
+              <a class="btn" href="mailto:info@leopardfriesian.com?subject=Availability%20Request%20-%20FDAS%20Phoenix">Check Availability</a>
+            </div>
+
+            <p class="fine">Frozen semen ships to qualified reproductive veterinary clinics only.</p>
+          </div>
         </div>
 
         <div class="hero-media" aria-label="FDAS Phoenix image">
           <!-- Swap this image path to your real file -->
-          <img src="/assets/img/phoenix-frozengold.jpg" alt="FDAS Phoenix — Frozen Gold" onerror="this.style.display='none';" />
+          <img src="/assets/img/FrozenGold.png" alt="FDAS Phoenix — Frozen Gold" onerror="this.style.display='none';" />
         </div>
       </div>
     </section>
@@ -258,7 +358,3 @@
   <script src="/js/main.js" defer></script>
 </body>
 </html>
-
-
-
-

@@ -1,0 +1,822 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta
+    name="description"
+    content="War Pony Genesis — FDAS Phoenix on Hedera. 30 NFT cultural artifacts. Public release Feb 17, 2026 (Fire Horse) on SentX."
+  />
+  <title>War Pony Genesis — FDAS Phoenix</title>
+
+  <link rel="stylesheet" href="/css/styles.css" />
+
+  <style>
+    .nft *{box-sizing:border-box}
+    .nft{
+      --bg:#07070a;
+      --panel:#0e0f14;
+      --panel2:#12131a;
+      --text:#f2f3f7;
+      --muted:#b9bcc8;
+      --line:rgba(255,255,255,.10);
+      --accent:#f5c45a;
+      --accent2:#a8e6ff;
+      --danger:#ff5c6c;
+      --ok:#7cffb2;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max:1120px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+    }
+
+    .nft a{color:inherit}
+    .nft .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 72px;}
+
+    .nft .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 0 18px;
+    }
+    .nft .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .nft .mark{
+      width:42px; height:42px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(245,196,90,.9), rgba(168,230,255,.55));
+      box-shadow: 0 10px 26px rgba(245,196,90,.12);
+      position:relative;
+    }
+    .nft .mark:after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.35);
+      background: radial-gradient(circle at 30% 30%, rgba(0,0,0,.06), rgba(0,0,0,.35));
+    }
+    .nft .brand strong{display:block; letter-spacing:.4px; font-size:14px}
+    .nft .brand span{display:block; font-size:12px; color:var(--muted)}
+
+    .nft .nav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;
+    }
+    .nft .nav a{
+      font-size:12px; color:var(--muted); text-decoration:none;
+      padding:8px 10px; border:1px solid transparent; border-radius:999px;
+      transition:.2s ease;
+    }
+    .nft .nav a:hover{border-color:var(--line); color:var(--text); background:rgba(255,255,255,.03)}
+    .nft .nav a.active{
+      color:var(--text);
+      border-color: rgba(245,196,90,.55);
+      background: rgba(245,196,90,.10);
+    }
+
+    .nft .btn{
+      appearance:none; border:1px solid var(--line); background:rgba(255,255,255,.03);
+      color:var(--text); padding:12px 14px; border-radius:14px; cursor:pointer;
+      transition:.2s ease; font-weight:600; letter-spacing:.2px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      text-decoration:none;
+    }
+    .nft .btn:hover{transform: translateY(-1px); border-color: rgba(245,196,90,.35); background:rgba(245,196,90,.07)}
+    .nft .btn.primary{
+      border-color: rgba(245,196,90,.55);
+      background: linear-gradient(135deg, rgba(245,196,90,.22), rgba(168,230,255,.10));
+      box-shadow: 0 14px 40px rgba(245,196,90,.10);
+    }
+    .nft .btn.primary:hover{background: linear-gradient(135deg, rgba(245,196,90,.28), rgba(168,230,255,.12))}
+    .nft .btn.small{padding:9px 11px; border-radius:12px; font-size:12px; font-weight:700}
+
+    .nft .hero{
+      display:grid; grid-template-columns: 1.22fr .78fr; gap:18px;
+      margin-top:10px;
+    }
+    @media (max-width: 920px){
+      .nft .hero{grid-template-columns:1fr;}
+    }
+
+    .nft .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .nft .heroMedia{
+      position:relative;
+      min-height: 420px;
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(700px 380px at 20% 25%, rgba(245,196,90,.18), transparent 60%),
+        radial-gradient(700px 380px at 80% 40%, rgba(168,230,255,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+    }
+    .nft .heroMedia img, .nft .heroMedia video{
+      width:100%; height:100%; object-fit:cover; display:block; opacity:.92;
+      filter: contrast(1.02) saturate(1.05);
+    }
+    .nft .heroOverlay{
+      position:absolute; inset:0;
+      background: linear-gradient(90deg, rgba(7,7,10,.85), rgba(7,7,10,.35) 50%, rgba(7,7,10,.70));
+      display:flex; flex-direction:column; justify-content:flex-end;
+      padding:22px;
+      gap:10px;
+    }
+    .nft .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .nft .chip{
+      font-size:12px; color:var(--muted);
+      padding:7px 10px; border-radius:999px;
+      background: rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(8px);
+    }
+    .nft .chip b{color:var(--text)}
+    .nft h1{
+      margin:0;
+      font-size:40px;
+      line-height:1.06;
+      letter-spacing:-.5px;
+    }
+    @media (max-width: 520px){
+      .nft h1{font-size:34px}
+    }
+    .nft .sub{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+      max-width: 70ch;
+      margin: 6px 0 0;
+    }
+    .nft .heroActions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+
+    .nft .rightCard{padding:18px}
+    .nft .kpiRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+    .nft .kpi{
+      flex:1; min-width: 140px;
+      padding:12px; border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .nft .kpi .label{font-size:11px; color:var(--muted); letter-spacing:.35px; text-transform:uppercase}
+    .nft .kpi .value{font-size:18px; font-weight:800; margin-top:5px}
+    .nft .mono{font-family: var(--mono)}
+    .nft .divider{height:1px; background:var(--line); margin:14px 0}
+    .nft .note{font-size:12px; color:var(--muted); line-height:1.5}
+
+    .nft .countdown{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin-top:14px;
+    }
+    .nft .timeBox{
+      padding:12px 10px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.16));
+      text-align:center;
+    }
+    .nft .timeBox .num{font-size:22px; font-weight:900}
+    .nft .timeBox .unit{font-size:11px; color:var(--muted); letter-spacing:.35px; text-transform:uppercase}
+
+    .nft .section{margin-top:26px; padding: 18px;}
+    .nft .section h2{margin: 0 0 8px; font-size:22px; letter-spacing:-.2px;}
+    .nft .section p{margin: 10px 0; color:var(--muted); line-height:1.7}
+
+    .nft .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px}
+    @media (max-width: 920px){ .nft .grid3{grid-template-columns:1fr} }
+    .nft .card{
+      padding:14px; border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+    }
+    .nft .card h3{margin:0 0 6px; font-size:15px}
+    .nft .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.65}
+    .nft .card li{margin:6px 0}
+    .nft .hl{
+      border:1px solid rgba(245,196,90,.30);
+      background: linear-gradient(180deg, rgba(245,196,90,.10), rgba(0,0,0,.18));
+    }
+
+    .nft .mediaStrip{
+      padding:12px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.16);
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+      min-height: 240px;
+      overflow:hidden;
+    }
+    @media (max-width: 520px){ .nft .mediaStrip{grid-template-columns:1fr} }
+    .nft .mediaStrip img{
+      width:100%; height:100%; object-fit:cover; display:block;
+      border-radius:14px; border:1px solid rgba(255,255,255,.10);
+      filter: contrast(1.02) saturate(1.04);
+    }
+
+    /* Gallery grid (War Pony tiles) */
+    .war-grid{
+      margin-top:14px;
+      display:grid;
+      gap:14px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      max-width: 920px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    @media (min-width: 980px){
+      .war-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    .tile{
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      text-decoration:none;
+      color: inherit;
+      display:block;
+    }
+    .tile img{
+      width:100%;
+      aspect-ratio: 1 / 1;
+      object-fit:cover;
+      display:block;
+      transition: transform .35s ease;
+    }
+    .tile:hover img{ transform: scale(1.06); }
+    .cap{
+      padding:10px;
+      text-align:center;
+      font-size:13px;
+      font-weight:650;
+      color: var(--muted);
+      background: rgba(0,0,0,.18);
+      border-top: 1px solid var(--line);
+    }
+
+    .nft .faq{margin-top:12px; display:grid; gap:10px;}
+    .nft details{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: rgba(0,0,0,.16);
+      padding:10px 12px;
+    }
+    .nft summary{
+      cursor:pointer;
+      list-style:none;
+      font-weight:800;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+    }
+    .nft summary::-webkit-details-marker{display:none}
+    .nft .ans{color:var(--muted); line-height:1.7; margin-top:10px; font-size:14px}
+
+    .nft .footer{
+      margin-top:28px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:12px;
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;
+    }
+    .nft .links{display:flex; gap:10px; flex-wrap:wrap}
+    .nft .links a{color:var(--muted); text-decoration:none; border-bottom:1px dotted rgba(255,255,255,.18)}
+    .nft .links a:hover{color:var(--text)}
+
+    .nft .toast{
+      position:fixed; left:50%; transform:translateX(-50%);
+      bottom:18px; width:min(680px, calc(100% - 28px));
+      border:1px solid var(--line);
+      background: rgba(12,12,16,.92);
+      backdrop-filter: blur(10px);
+      border-radius:18px;
+      padding:12px 14px;
+      box-shadow: var(--shadow);
+      display:none;
+      z-index:999;
+    }
+    .nft .toast.show{display:flex; align-items:flex-start; justify-content:space-between; gap:10px}
+    .nft .toast .msg{color:var(--muted); font-size:13px; line-height:1.5}
+    .nft .toast .msg b{color:var(--text)}
+
+    .nft [id]{scroll-margin-top: 90px;}
+  </style>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main id="main" class="page nft">
+    <div class="wrap">
+
+      <div class="topbar">
+        <a class="brand" href="#top">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <strong>War Pony Genesis</strong>
+            <span>FDAS Phoenix • Hedera • Feb 17, 2026</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Launch page navigation">
+          <a href="#about">About</a>
+          <a href="#phoenix">Meet Phoenix</a>
+          <a href="#genesis">Genesis</a>
+          <a href="#collect">Collect</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+
+      <div id="top" class="hero">
+        <div>
+          <div class="heroMedia">
+            <img src="/assets/img/FDAS Phoenix_home.png" alt="FDAS Phoenix — War Pony Genesis" onerror="this.style.display='none';" />
+
+            <div class="heroOverlay">
+              <div>
+                <div class="chips">
+                  <div class="chip"><b>30</b> Genesis NFTs</div>
+                  <div class="chip"><b>Drop</b> Serials #01–#30</div>
+                  <div class="chip"><b>Hedera</b> Native Collection</div>
+                </div>
+
+                <h1>War Pony Genesis.</h1>
+                <p class="sub">
+                  A limited NFT collection honoring FDAS Phoenix — introduced with restraint and clarity before any breeding season,
+                  pairings, or commercial offerings are announced.
+                </p>
+
+                <div class="heroActions">
+                  <a class="btn primary" href="#collect" id="ctaPrimary">Collect on SentX</a>
+                  <a class="btn" href="#phoenix">Meet Phoenix</a>
+                  <a class="btn" href="#gallery">View gallery</a>
+                </div>
+              </div>
+
+              <div class="note">
+                Public release: <span class="mono" id="launchText">Feb 17, 2026 • 05:00 UTC • Fire Horse</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="panel rightCard" aria-label="Launch card">
+          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
+            <div>
+              <div class="label" style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px;">Countdown to Release</div>
+              <div style="font-weight:950; font-size:18px; margin-top:6px;">Fire Horse Opening</div>
+            </div>
+            <a class="btn small" href="#collect">Collect</a>
+          </div>
+
+          <div class="countdown" role="timer" aria-live="polite">
+            <div class="timeBox"><div class="num" id="cdDays">--</div><div class="unit">Days</div></div>
+            <div class="timeBox"><div class="num" id="cdHours">--</div><div class="unit">Hours</div></div>
+            <div class="timeBox"><div class="num" id="cdMins">--</div><div class="unit">Minutes</div></div>
+            <div class="timeBox"><div class="num" id="cdSecs">--</div><div class="unit">Seconds</div></div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="kpiRow">
+            <div class="kpi">
+              <div class="label">Total Supply</div>
+              <div class="value"><span id="supplyTotal">30</span></div>
+            </div>
+            <div class="kpi">
+              <div class="label">Drop</div>
+              <div class="value">#01–#30</div>
+            </div>
+          </div>
+
+          <div class="kpiRow">
+            <div class="kpi">
+              <div class="label">Target Price</div>
+              <div class="value"><span class="mono" id="targetPrice">6,500 HBAR</span></div>
+            </div>
+            <div class="kpi">
+              <div class="label">Market</div>
+              <div class="value">SentX</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="note">
+            War Pony Genesis is a <b>cultural artifact series</b>. It is <b>not</b> breeding rights, not fractional ownership,
+            and not a roadmap-driven utility project.
+          </div>
+        </aside>
+      </div>
+
+      <section id="about" class="panel section">
+        <h2>About this launch</h2>
+        <p>
+          War Pony Genesis is the first public chapter of FDAS Phoenix’s story on Hedera. This limited collection of 30 NFTs introduces
+          Phoenix to collectors and supporters with restraint and clarity — a legacy release, not a hype event.
+          <b>This Genesis drop also marks the beginning of the physical infrastructure that will support Phoenix’s long-term legacy.</b>
+        </p>
+
+        <h3 style="margin:16px 0 6px; font-size:16px; letter-spacing:-.1px;">Where the Launch Proceeds Go</h3>
+        <p>
+          War Pony Genesis is not only a digital release. It supports the real-world infrastructure required to preserve and grow the FDAS Phoenix bloodline.
+        </p>
+        <p>
+          Proceeds from this collection are directed toward foundational farm improvements that allow Phoenix’s legacy to continue for decades.
+        </p>
+        <p>
+          Current priorities include:
+        </p>
+        <ul style="margin:10px 0 0; padding-left:18px; color:var(--muted); line-height:1.65">
+          <li>Installation of permanent perimeter fencing and safe pasture systems</li>
+          <li>Construction of a new barn and run-in shelters for mares and foals</li>
+          <li>Farm equipment for producing and harvesting our own hay</li>
+          <li>Land stewardship, pasture development, and regenerative agriculture</li>
+        </ul>
+        <p>
+          These are long-term investments designed to create a sustainable home for Phoenix’s lineage and the future horses who will carry it forward.
+        </p>
+        <p>
+          Collectors are not only acquiring a piece of digital history — they are helping build the physical environment that makes the bloodline possible.
+        </p>
+
+        <p class="note">
+          Public sale opens <span class="mono">Feb 17, 2026 • 05:00 UTC</span> (Chinese New Year • Year of the Fire Horse).
+        </p>
+      </section>
+
+      <section id="phoenix" class="panel section">
+        <h2>Meet FDAS Phoenix</h2>
+        <p>
+          FDAS Phoenix is a Friesian Appaloosa stallion representing nearly two decades of intentional, purpose-driven breeding through
+          Friesian Dreams and Spots (FDAS). Phoenix is a real, living horse, stewarded with long-term care and professional handling.
+        </p>
+
+        <div class="mediaStrip" aria-label="Phoenix photo gallery">
+          <img src="/assets/img/FDAS Phoenix_7 yrs.png" alt="FDAS Phoenix portrait" onerror="this.style.display='none';" />
+          <img src="/assets/img/FDAS Phoenix Hugs.png" alt="FDAS Phoenix standing" onerror="this.style.display='none';" />
+          <img src="/assets/img/FDAS Phoenix Kiss.png" alt="FDAS Phoenix side profile" onerror="this.style.display='none';" />
+        </div>
+      </section>
+
+      <section id="genesis" class="panel section">
+        <h2>Genesis details</h2>
+        <p>
+          This series exists as a cultural and historical marker — released before any breeding season, pairings, or commercial offerings
+          are announced.
+        </p>
+
+        <div class="grid3">
+          <div class="card hl">
+            <h3>Fixed supply</h3>
+            <ul>
+              <li><b>30</b> total NFTs, fixed and immutable</li>
+              <li>One complete Genesis set: <b>#01–#30</b></li>
+              <li>Built to be collected and held</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Collector clarity</h3>
+            <ul>
+              <li>No breeding rights</li>
+              <li>No ownership of the stallion</li>
+              <li>No revenue share or financial participation</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Stewardship</h3>
+            <ul>
+              <li>Legacy-first approach</li>
+              <li>Real horse, real provenance</li>
+              <li>Collected, not promised</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="collect" class="panel section">
+        <h2>Where to collect</h2>
+        <p>
+          This release is listed directly on Hedera NFT marketplaces. Start with SentX, and we will add additional marketplace links as listings go live.
+        </p>
+
+        <div class="grid3">
+          <div class="card">
+            <h3>SentX (Primary)</h3>
+            <p class="note" style="margin:8px 0 0;">
+              View the War Pony Genesis listings and collect Serials #01–#30.
+            </p>
+            <div style="margin-top:12px;">
+              <a class="btn primary" href="#" id="btnSentX" target="_blank" rel="noopener">View on SentX</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Zuse (Optional)</h3>
+            <p class="note" style="margin:8px 0 0;">
+              Secondary marketplace link (add when live).
+            </p>
+            <div style="margin-top:12px;">
+              <a class="btn" href="#" id="btnZuse" target="_blank" rel="noopener">View on Zuse</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Follow the journey</h3>
+            <p class="note" style="margin:8px 0 0;">
+              Updates and Phoenix media will be shared on social.
+            </p>
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn" href="https://x.com/leopardfriesian" id="btnX" target="_blank" rel="noopener">X / Twitter</a>
+              <a class="btn" href="https://instagram.com/leopardfriesian" id="btnIG" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>
+            <div style="font-weight:900;">Launch time</div>
+            <div class="note">Feb 17, 2026 • <span class="mono">05:00 UTC</span> (Fire Horse)</div>
+          </div>
+          <a class="btn primary" href="#" id="btnCollectNow" target="_blank" rel="noopener">Collect on SentX</a>
+        </div>
+      </section>
+
+      <section id="gallery" class="panel section">
+        <h2>War Pony Gallery</h2>
+        <p>
+          The complete 30-piece War Pony Genesis collection. Click any image to open full size.
+        </p>
+
+        <div class="war-grid">
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_01.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_01.png" alt="War Pony #01" loading="lazy" decoding="async">
+            <div class="cap">War Pony #01</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_02.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_02.png" alt="War Pony #02" loading="lazy" decoding="async">
+            <div class="cap">War Pony #02</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_03.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_03.png" alt="War Pony #03" loading="lazy" decoding="async">
+            <div class="cap">War Pony #03</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_04.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_04.png" alt="War Pony #04" loading="lazy" decoding="async">
+            <div class="cap">War Pony #04</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_05.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_05.png" alt="War Pony #05" loading="lazy" decoding="async">
+            <div class="cap">War Pony #05</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_06.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_06.png" alt="War Pony #06" loading="lazy" decoding="async">
+            <div class="cap">War Pony #06</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_07.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_07.png" alt="War Pony #07" loading="lazy" decoding="async">
+            <div class="cap">War Pony #07</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_08.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_08.png" alt="War Pony #08" loading="lazy" decoding="async">
+            <div class="cap">War Pony #08</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_09.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_09.png" alt="War Pony #09" loading="lazy" decoding="async">
+            <div class="cap">War Pony #09</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_10.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_10.png" alt="War Pony #10" loading="lazy" decoding="async">
+            <div class="cap">War Pony #10</div>
+          </a>
+
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_11.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_11.png" alt="War Pony #11" loading="lazy" decoding="async">
+            <div class="cap">War Pony #11</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_12.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_12.png" alt="War Pony #12" loading="lazy" decoding="async">
+            <div class="cap">War Pony #12</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_13.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_13.png" alt="War Pony #13" loading="lazy" decoding="async">
+            <div class="cap">War Pony #13</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_14.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_14.png" alt="War Pony #14" loading="lazy" decoding="async">
+            <div class="cap">War Pony #14</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_15.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_15.png" alt="War Pony #15" loading="lazy" decoding="async">
+            <div class="cap">War Pony #15</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_16.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_16.png" alt="War Pony #16" loading="lazy" decoding="async">
+            <div class="cap">War Pony #16</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_17.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_17.png" alt="War Pony #17" loading="lazy" decoding="async">
+            <div class="cap">War Pony #17</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_18.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_18.png" alt="War Pony #18" loading="lazy" decoding="async">
+            <div class="cap">War Pony #18</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_19.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_19.png" alt="War Pony #19" loading="lazy" decoding="async">
+            <div class="cap">War Pony #19</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_20.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_20.png" alt="War Pony #20" loading="lazy" decoding="async">
+            <div class="cap">War Pony #20</div>
+          </a>
+
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_21.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_21.png" alt="War Pony #21" loading="lazy" decoding="async">
+            <div class="cap">War Pony #21</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_22.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_22.png" alt="War Pony #22" loading="lazy" decoding="async">
+            <div class="cap">War Pony #22</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_23.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_23.png" alt="War Pony #23" loading="lazy" decoding="async">
+            <div class="cap">War Pony #23</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_24.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_24.png" alt="War Pony #24" loading="lazy" decoding="async">
+            <div class="cap">War Pony #24</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_25.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_25.png" alt="War Pony #25" loading="lazy" decoding="async">
+            <div class="cap">War Pony #25</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_26.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_26.png" alt="War Pony #26" loading="lazy" decoding="async">
+            <div class="cap">War Pony #26</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_27.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_27.png" alt="War Pony #27" loading="lazy" decoding="async">
+            <div class="cap">War Pony #27</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_28.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_28.png" alt="War Pony #28" loading="lazy" decoding="async">
+            <div class="cap">War Pony #28</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_29.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_29.png" alt="War Pony #29" loading="lazy" decoding="async">
+            <div class="cap">War Pony #29</div>
+          </a>
+          <a class="tile" href="/assets/img/FDAS_Phoenix_WarPony_30.png" target="_blank" rel="noopener">
+            <img src="/assets/img/FDAS_Phoenix_WarPony_30.png" alt="War Pony #30" loading="lazy" decoding="async">
+            <div class="cap">War Pony #30</div>
+          </a>
+        </div>
+      </section>
+
+      <section id="faq" class="panel section">
+        <h2>FAQ</h2>
+
+        <div class="faq">
+          <details>
+            <summary>Do these NFTs include breeding rights?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">No. War Pony Genesis is a cultural artifact series and does not convey breeding rights, ownership of Phoenix, or financial participation.</div>
+          </details>
+
+          <details>
+            <summary>How many NFTs exist in total?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">Total supply is fixed at 30. The public release is Serials #01–#30.</div>
+          </details>
+
+          <details>
+            <summary>Where do I collect?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">Start with SentX. Additional marketplace links (like Zuse) can be added as listings go live.</div>
+          </details>
+
+          <details>
+            <summary>Is this connected to Echoes of the Bloodline right now?<span style="color:var(--muted)">+</span></summary>
+            <div class="ans">Not at this stage. War Pony Genesis is intentionally separate and exists as Phoenix’s first public chapter on Hedera.</div>
+          </details>
+        </div>
+      </section>
+
+      <div class="footer">
+        <div>© <span id="yearNow"></span> FDAS • War Pony Genesis • Hedera-based cultural artifacts</div>
+        <div class="links">
+          <a href="#" id="footerTerms">Terms</a>
+          <a href="#" id="footerPrivacy">Privacy</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <div class="msg" id="toastMsg"></div>
+      <button class="btn small" id="toastClose" type="button">Close</button>
+    </div>
+
+    <script>
+      // ==========================
+      // CONFIG (edit these)
+      // ==========================
+      // Public sale moment: Feb 17, 2026 05:00 UTC
+      const LAUNCH_ISO = "2026-02-17T05:00:00Z";
+
+      // Replace these with your real links
+      const TERMS_URL = "#";
+      const PRIVACY_URL = "#";
+      const SENTX_URL = "https://sentx.io";      // TODO: paste your collection/listing URL
+      const ZUSE_URL  = "https://zuse.market";   // optional
+
+      const X_URL = "https://x.com/leopardfriesian";
+      const INSTAGRAM_URL = "https://instagram.com/leopardfriesian";
+
+      // Display-only values
+      const TOTAL_SUPPLY = 30;
+      const TARGET_PRICE_TEXT = "6,500 HBAR";
+
+      // ==========================
+      // Utilities
+      // ==========================
+      const $ = (id) => document.getElementById(id);
+
+      function showToast(html){
+        const t = $("toast");
+        $("toastMsg").innerHTML = html;
+        t.classList.add("show");
+      }
+      function hideToast(){ $("toast").classList.remove("show"); }
+      function pad2(n){ return String(n).padStart(2,"0"); }
+
+      const launchDate = new Date(LAUNCH_ISO);
+
+      function updateCountdown(){
+        const now = new Date();
+        let diff = launchDate - now;
+        if (diff < 0) diff = 0;
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / (3600 * 24));
+        const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+
+        $("cdDays").textContent = days;
+        $("cdHours").textContent = pad2(hours);
+        $("cdMins").textContent = pad2(mins);
+        $("cdSecs").textContent = pad2(secs);
+      }
+
+      function wireLinks(){
+        $("footerTerms").href = TERMS_URL;
+        $("footerPrivacy").href = PRIVACY_URL;
+
+        $("btnSentX").href = SENTX_URL;
+        $("btnCollectNow").href = SENTX_URL;
+
+        $("btnZuse").href = ZUSE_URL;
+
+        $("btnX").href = X_URL;
+        $("btnIG").href = INSTAGRAM_URL;
+      }
+
+      function renderStatic(){
+        $("yearNow").textContent = new Date().getFullYear();
+        $("supplyTotal").textContent = TOTAL_SUPPLY;
+        $("targetPrice").textContent = TARGET_PRICE_TEXT;
+        $("launchText").textContent = "Feb 17, 2026 • 05:00 UTC • Fire Horse";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        wireLinks();
+        renderStatic();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        $("toastClose").addEventListener("click", hideToast);
+
+        // If someone clicks "Collect" before launch, show a gentle note (still allows navigation)
+        $("btnCollectNow").addEventListener("click", () => {
+          const now = new Date();
+          if (now < launchDate){
+            showToast("<b>Not live yet.</b><br/>Public release opens <span class='mono'>Feb 17, 2026 • 05:00 UTC</span> (Fire Horse).");
+          }
+        });
+      });
+    </script>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
+
