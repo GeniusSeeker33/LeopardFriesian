@@ -93,7 +93,7 @@ li{ color: var(--muted); line-height: 1.7; }
   background: rgba(255,255,255,.03);
   color:var(--text);
   text-decoration:none;
-  font-weight:650;
+  font-weight:600;
   transition: transform .12s ease, border-color .12s ease, background .12s ease;
 }
 .btn.primary{
@@ -136,7 +136,7 @@ li{ color: var(--muted); line-height: 1.7; }
 .text-link{
   color: var(--accent2);
   text-decoration:none;
-  font-weight:650;
+  font-weight:600;
 }
 .text-link:hover{text-decoration:underline}
 
@@ -196,7 +196,7 @@ li{ color: var(--muted); line-height: 1.7; }
   margin-top:10px;
   color: var(--text);
   font-style:normal;
-  font-weight:650;
+  font-weight:600;
 }
 
 .form{
@@ -239,6 +239,47 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible
 .fine{color:var(--muted); font-size:12px; margin-top:10px}
 
 /* ---------- Header / Nav ---------- */
+.site-header{
+  border-bottom: 1px solid var(--line);
+  background: rgba(7,9,16,.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.brand{
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1.2;
+  flex-shrink: 0;
+}
+.brand-name{
+  color: var(--text);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -.01em;
+}
+.brand-sub{
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.brand:hover .brand-name{ color: var(--accent2); }
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -264,27 +305,6 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible
   padding-left: .9rem;
 }
 
-.nav a {
-  color: var(--muted);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 13px;
-  padding: 8px 10px;
-  border-radius: 12px;
-  transition: background .12s ease, border-color .12s ease, color .12s ease;
-}
-
-.nav a:hover {
-  color: var(--text);
-  border-bottom: 1px solid var(--line);
-  background: rgba(255,255,255,.03);
-}
-
-.nav a.active {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-}
-
 @media (max-width: 900px) {
   .nav {
     justify-content: flex-start;
@@ -302,7 +322,6 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible
   }
 }
 
-/* --- NEW Divider & Link Styling --- */
 .nav-divider{
   margin-left:1rem;
   margin-right:.5rem;
@@ -316,7 +335,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible
 .nav a{
   color: var(--muted);
   text-decoration:none;
-  font-weight:650;
+  font-weight:600;
   font-size:13px;
   padding:10px 10px;
   border-radius: 12px;
@@ -389,7 +408,7 @@ a:focus-visible, .btn:focus-visible, input:focus-visible, textarea:focus-visible
 .footer-links a {
   color: var(--accent2);
   text-decoration: none;
-  font-weight: 650;
+  font-weight: 600;
 }
 
 .footer-links a:hover {

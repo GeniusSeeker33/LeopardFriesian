@@ -15,7 +15,7 @@
     if (!el) return false;
 
     try {
-      var res = await fetch(url, { cache: "no-cache" });
+      var res = await fetch(url);
       if (!res.ok) throw new Error("HTTP " + res.status + " for " + url);
       el.innerHTML = await res.text();
       return true;
@@ -26,7 +26,7 @@
   }
 
   function setActiveNav() {
-    var header = document.querySelector(".site-header");
+    var header = document.querySelector("#site-header");
     if (!header) return;
 
     var current = normalizedPath(window.location.pathname);
