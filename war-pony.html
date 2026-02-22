@@ -169,19 +169,6 @@
     .nft .divider{height:1px; background:var(--line); margin:14px 0}
     .nft .note{font-size:12px; color:var(--muted); line-height:1.5}
 
-    .nft .countdown{
-      display:grid; grid-template-columns: repeat(4, 1fr); gap:10px; margin-top:14px;
-    }
-    .nft .timeBox{
-      padding:12px 10px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.16));
-      text-align:center;
-    }
-    .nft .timeBox .num{font-size:22px; font-weight:900}
-    .nft .timeBox .unit{font-size:11px; color:var(--muted); letter-spacing:.35px; text-transform:uppercase}
-
     .nft .section{margin-top:26px; padding: 18px;}
     .nft .section h2{margin: 0 0 8px; font-size:22px; letter-spacing:-.2px;}
     .nft .section p{margin: 10px 0; color:var(--muted); line-height:1.7}
@@ -367,23 +354,6 @@
         </div>
 
         <aside class="panel rightCard" aria-label="Launch card">
-          <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:10px;">
-            <div>
-              <div class="label" style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.35px;">Countdown to Release</div>
-              <div style="font-weight:950; font-size:18px; margin-top:6px;">Fire Horse Opening</div>
-            </div>
-            <a class="btn small" href="#collect">Collect</a>
-          </div>
-
-          <div class="countdown" role="timer" aria-live="polite">
-            <div class="timeBox"><div class="num" id="cdDays">--</div><div class="unit">Days</div></div>
-            <div class="timeBox"><div class="num" id="cdHours">--</div><div class="unit">Hours</div></div>
-            <div class="timeBox"><div class="num" id="cdMins">--</div><div class="unit">Minutes</div></div>
-            <div class="timeBox"><div class="num" id="cdSecs">--</div><div class="unit">Seconds</div></div>
-          </div>
-
-          <div class="divider"></div>
-
           <div class="kpiRow">
             <div class="kpi">
               <div class="label">Total Supply</div>
@@ -514,16 +484,6 @@
             </p>
             <div style="margin-top:12px;">
               <a class="btn primary" href="#" id="btnSentX" target="_blank" rel="noopener">View on SentX</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>Zuse (Optional)</h3>
-            <p class="note" style="margin:8px 0 0;">
-              Secondary marketplace link (add when live).
-            </p>
-            <div style="margin-top:12px;">
-              <a class="btn" href="#" id="btnZuse" target="_blank" rel="noopener">View on Zuse</a>
             </div>
           </div>
 
@@ -698,7 +658,7 @@
 
           <details>
             <summary>Where do I collect?<span style="color:var(--muted)">+</span></summary>
-            <div class="ans">Start with SentX. Additional marketplace links (like Zuse) can be added as listings go live.</div>
+            <div class="ans">Collect on SentX. Additional marketplace links will be added as listings go live.</div>
           </details>
 
           <details>
@@ -735,7 +695,6 @@
       const TERMS_URL = "#";
       const PRIVACY_URL = "#";
       const SENTX_URL = "https://sentx.io/nft-marketplace/fdas-phoenix-war-pony-frozen-gold";      // TODO: paste your collection/listing URL
-      const ZUSE_URL  = "https://zuse.market";   // optional
 
       const X_URL = "https://x.com/leopardfriesian";
       const INSTAGRAM_URL = "https://instagram.com/leopardfriesian";
@@ -757,33 +716,12 @@
       function hideToast(){ $("toast").classList.remove("show"); }
       function pad2(n){ return String(n).padStart(2,"0"); }
 
-      const launchDate = new Date(LAUNCH_ISO);
-
-      function updateCountdown(){
-        const now = new Date();
-        let diff = launchDate - now;
-        if (diff < 0) diff = 0;
-
-        const totalSeconds = Math.floor(diff / 1000);
-        const days = Math.floor(totalSeconds / (3600 * 24));
-        const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-        const mins = Math.floor((totalSeconds % 3600) / 60);
-        const secs = totalSeconds % 60;
-
-        $("cdDays").textContent = days;
-        $("cdHours").textContent = pad2(hours);
-        $("cdMins").textContent = pad2(mins);
-        $("cdSecs").textContent = pad2(secs);
-      }
-
       function wireLinks(){
         $("footerTerms").href = TERMS_URL;
         $("footerPrivacy").href = PRIVACY_URL;
 
         $("btnSentX").href = SENTX_URL;
         $("btnCollectNow").href = SENTX_URL;
-
-        $("btnZuse").href = ZUSE_URL;
 
         $("btnX").href = X_URL;
         $("btnIG").href = INSTAGRAM_URL;
@@ -799,18 +737,8 @@
       document.addEventListener("DOMContentLoaded", () => {
         wireLinks();
         renderStatic();
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
 
         $("toastClose").addEventListener("click", hideToast);
-
-        // If someone clicks "Collect" before launch, show a gentle note (still allows navigation)
-        $("btnCollectNow").addEventListener("click", () => {
-          const now = new Date();
-          if (now < launchDate){
-            showToast("<b>Not live yet.</b><br/>Public release opens <span class='mono'>Feb 17, 2026 • 05:00 UTC</span> (Fire Horse).");
-          }
-        });
       });
     </script>
   </main>
