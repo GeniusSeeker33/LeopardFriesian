@@ -15,7 +15,9 @@
     if (!el) return false;
 
     try {
-      var res = await fetch(url);
+      // Bust the browser cache so header/footer changes always show immediately
+      var bustUrl = url + (url.indexOf("?") === -1 ? "?" : "&") + "v=" + Date.now();
+      var res = await fetch(bustUrl, { cache: "no-store" });
       if (!res.ok) throw new Error("HTTP " + res.status + " for " + url);
       el.innerHTML = await res.text();
       return true;
