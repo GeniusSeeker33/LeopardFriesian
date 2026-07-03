@@ -16,7 +16,12 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8000/index.html)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8000/assets/img/Phoenix_Zenna_Baby_Announcement.png\")",
       "Bash(curl -s http://localhost:8000/index.html)",
-      "Bash(git commit -q -m ' *)"
+      "Bash(git commit -q -m ' *)",
+      "Bash(python3 -m http.server 8877)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8877/assets/img/FDAS%20Eli_baby.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8877/assets/img/FDAS Eli_baby.png\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8877/eli.html\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"https://img1.wsimg.com/isteam/ip/6348e189-47b0-4178-8915-314376cf37a7/FDAS%20Dahlia_5_5_2007.png/:/rs=w:1200,h:800,cg:true,m\")"
     ]
   }
 }
