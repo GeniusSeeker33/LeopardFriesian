@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd *)",
+      "Bash(grep -rnoE '\\(assets/img|/img/\\)[^\"'\"'\"'`\\)]*' js/)",
+      "Bash(python3 -)",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git merge *)",
+      "Bash(git branch *)",
+      "Bash(python3 *)",
+      "Bash(curl -s http://localhost:8000/partials/header.html)",
+      "Bash(curl -s http://localhost:8000/partials/footer.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8000/index.html)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8000/assets/img/Phoenix_Zenna_Baby_Announcement.png\")",
+      "Bash(curl -s http://localhost:8000/index.html)",
+      "Bash(git commit -q -m ' *)"
+    ]
+  }
+}
